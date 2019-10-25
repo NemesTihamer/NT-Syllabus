@@ -1,0 +1,751 @@
+\documentclass[a4paper,11pt,oneside]{article}
+\usepackage[utf8]{inputenc}
+%\usepackage{t1enc}
+%\usepackage[hungarian]{babel}
+\usepackage{url}
+\usepackage{sectsty}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{pifont}
+\usepackage{fontawesome}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{hyperref}
+\usepackage[normalem]{ulem}
+
+\hypersetup{
+    %bookmarks=false,        % show bookmarks bar?
+    unicode=true,           % non-Latin characters in Acrobat’s bookmarks
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,        % false: boxed links; true: colored links
+    linkcolor=MidnightBlue, % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=MidnightBlue   % color of external links
+}
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\allsectionsfont{\sffamily}
+
+%\newcommand{\CC}[1]{\textsf{\small #1}}% to quote from Computing Curricula 2001
+\newcommand{\CC}[1]{#1}
+
+\newcommand{\Cincluded}{{\small\cmark}}
+\newcommand{\Cdefine}{{\small\cmark\faFileTextO}}
+\newcommand{\Ccodeonly}{{\small\cmark\faFileText}}
+\newcommand{\Cnofocus}{{\small\faQuestion}}
+\newcommand{\Cexmaybe}{{\small\xmark\faQuestionCircle}}
+\newcommand{\Cexcluded}{{\small\xmark}}
+
+\newcommand{\Iincluded}{\item[\hbox to 1.8em{\Cincluded\hfill}]}
+\newcommand{\Idefine}{\item[\hbox to 1.8em{\Cdefine\hfill}]}
+\newcommand{\Icodeonly}{\item[\hbox to 1.8em{\Ccodeonly\hfill}]}
+\newcommand{\Inofocus}{\item[\hbox to 1.8em{\Cnofocus\hfill}]}
+\newcommand{\Iexmaybe}{\item[\hbox to 1.8em{\Cexmaybe\hfill}]}
+\newcommand{\Iexcluded}{\item[\hbox to 1.8em{\Cexcluded\hfill}]}
+
+\newcommand{\DRAFT}{ -- Piszkozat 2020/21-re}
+\pagestyle{myheadings}
+\textwidth 126.34 mm
+\textheight 189.55 mm
+\parindent 20 pt
+\parskip 0 pt
+\markboth{\sc Nemes Tihamér 2 Sillabusz\DRAFT}{\sc Nemes Tihamér 2 Sillabusz\DRAFT}
+
+\newenvironment{myitemize}{\begin{quote}\begin{itemize}\itemsep 0pt}{\end{itemize}\end{quote}}
+
+\newcommand{\remove}[1]{\sout{#1}}
+\newcommand{\new}[1]{{\bf \color{red}{#1}}}
+\newcommand{\richard}[1]{}
+
+
+\begin{document}
+\title{\sf Nemes Tihamér 2 Sillabusz \\
+    \large A Nemes Tihamér NITV Programozás kategória, 2. korcsoport anyagának kivonata}
+\author{}
+\date{~}
+\maketitle
+
+\section{Verzió és státusz}%{{{
+
+Ez egy nem hivatalos javaslat a 2020/2021. tanévi Nemes Tihamér NITV Programozás kategória
+2. korcsoportjának (9-10. osztályosok) második és harmadik fordulójában szereplő feladatok
+témaköreinek leírására.
+
+\medskip
+
+Jelen verzió még szerkesztés alatt áll, nem teljes, és nem megosztásra szánt.
+
+\medskip
+
+A Nemes Tihamér Sillabusz az IOI Syllabus mintájára készül, és jelenleg még fejlesztés alatt áll.
+Ha eléri célját, egy hivatalos dokumentum alakul ki belőle, amelynek aktuális verzióját a versenybizottság
+hagyja jóvá és teszi közzé minden évben. Az évek során a dokumentum változhat, fejlődhet.
+
+%}}}
+
+\section{Szerzők és elérhetőségeik}%{{{
+
+Szívesen fogadunk bármilyen visszajelzést és javaslatot a sillabusszal kapcsolatban
+a jelenlegi szerkesztő e-mail címére küldve (\verb!laszlo.nikhazy@gmail.com!).
+
+Azok számára, akik szeretnének hozzájárulni a dokumentum fejlesztéséhez, vagy hozzászólni,
+javaslatokat tenni a tartalmához, a sillabusz GitHub repository-jában találhatók információk.
+Minden javaslatot, hozzászólást és segítséget szívesen fogadunk.
+\url{https://github.com/niklaci/NT-Syllabus}.
+%}}}
+
+\section{Introduction}\label{sec:intro}%{{{
+
+During the years, the Syllabus has evolved. Currently it has the following purposes:
+
+\begin{itemize}
+\item
+It specifies a small set of required prerequisite knowledge.
+Below, this is given in the category ``Included, unlimited''
+and to some extent also in ``Included, to be defined''.
+
+\item
+It serves as a set of guidelines that help decide whether a task is 
+suitable for the International Olympiad in Informatics (IOI).
+Based on this document, the International Scientific Committee (ISC)
+evaluates the task proposals when selecting the competition tasks.
+
+\item
+As a consequence of the previous item, another purpose of the Syllabus 
+is to help the organizers of national olympiads prepare
+their students for the IOI.
+
+\end{itemize}
+
+The Syllabus aims to achieve these goals by providing a classification of topics and 
+concepts from mathematics and computer science. 
+More precisely, this Syllabus classifies each topic into one of six categories.
+Ordered by topic suitability, these are:
+
+\begin{myitemize}
+\Iincluded Included, unlimited
+\Idefine   Included, to be defined
+\Icodeonly Included, not for task description
+\Inofocus  Outside of focus
+\Iexmaybe  Excluded, but open to discussion
+\Iexcluded Explicitly excluded
+\end{myitemize}
+
+\noindent
+In the next section we explain the scope of each category.
+
+%}}}
+
+\section{Categories}\label{sec:categories}%{{{
+
+This Syllabus classifies a selection of topics into six different ca\-tegories. 
+Obviously, such a set of topics can never be exhaustive.
+Instead, the list given in this Syllabus should serve as examples that map out the boundary.
+Topics not explicitly mentioned in the Syllabus should be classified as follows:
+\begin{itemize}
+\itemsep -3pt
+\item Anything that is a prerequisite of an Included topic is also Included.
+\item Anything that is an extension of an Excluded topic or similar to an Excluded topic is also Excluded.
+\item Anything else that is not mentioned in the Syllabus is considered Outside of focus.
+\end{itemize}
+
+Note that issues related to the usage of suitable terminology and notations in competition tasks
+are beyond the scope of this document.\footnote{See
+T. Verhoeff: \emph{Concepts, Terminology, and Notations for IOI Competition Tasks},
+\url{http://scienceolympiads.org/ioi/sc/documents/terminology.pdf}}
+
+If there is a particular topic for which you are not sure how it should
+be classified, we invite you to submit a clarification request to the 
+current Syllabus maintainer.
+
+\bigskip
+
+\noindent
+Here are the definitions of the six possible classifications:
+
+\begin{description}
+\item[\Cincluded\ Included, unlimited]~\\
+    Topics in this category are considered to be prerequisite knowledge.
+    Contestants are expected to know them. These topics can appear
+    in task descriptions without further clarification.
+
+    Example: \emph{Integer} in~\S\ref{subsubsec:NG}
+
+\item[\Cdefine\ Included, to be defined]~\\
+    Contestants should know this topic,
+    but when it appears in a task description,
+    the statement should contain a sufficient definition.
+    This category is usually applied in situations where a general
+    concept that would be \Cincluded\ has many different ``flavors'' and a formal definition
+    is needed to distinguish among those.
+
+    Example: \emph{Directed graph} in~\S\ref{subsubsec:DS}~DS2
+
+\item[\Ccodeonly\ Included, not for task description]~\\
+    Topics that belong to this category should not appear in tasks 
+    descriptions. However, developing solutions and understanding 
+    model solutions may require the knowledge of these topics.
+
+    Example: \emph{Asymptotic analysis of upper complexity bounds\/}
+    in \S\ref{subsubsec:AL}~AL1
+
+    Note: This is the main category that should be of interest when 
+    preparing contestants for the IOI. 
+    It should be noted that this set of topics
+    contains a wide range of difficulties, starting from simple concepts and ending 
+    with topics that can appear in problems that aim to distinguish among 
+    the gold medallists. It is \textbf{not} expected that all contestants
+    should know everything listed in this category.
+
+\item[\Cnofocus\ Outside of focus]~\\
+    Any topic that is not explicitly addressed by the Syllabus
+    should be considered to belong to this category.
+
+    Contestants are not expected to have knowledge of these topics.
+    Most competition tasks will not be related to any topics 
+    from this category.
+
+    However, this does not prevent the inclusion of 
+    a competition task that is related to a particular topic
+    from this category. The ISC may wish to include such a competition 
+    task in order to broaden the scope of the IOI.
+    
+    If such a task is considered for the IOI,
+    the ISC will make sure that the task can reasonably be solved
+    without prior knowledge of the particular topic, and that 
+    the task can be stated
+    in terms of \Cincluded\ and \Cdefine\ concepts in a precise, concise, 
+    and clear way.
+
+    Examples of such tasks being used at recent IOIs include:
+    \begin{itemize}
+    \itemsep -3pt
+    \item Languages (a.k.a. Wikipedia) from IOI 2010 in Canada
+    \item Odometer (a.k.a. robot with pebbles) from IOI 2012 in Italy
+    \item Art class from IOI 2013 in Australia.
+    \end{itemize}
+
+
+\item[\Cexcluded\ Explicitly excluded]~\\
+    Some of the harder algorithmic topics are explicitly marked as excluded.
+    It is guaranteed that there will not be a competition
+    task that \emph{requires} the contestants to know these areas.
+
+    Furthermore, the tasks will be set with the goal that knowledge of 
+    Excluded topics should not help in obtaining simpler solutions / solutions 
+    worth more points.
+
+    This category contains topics whose inclusion will result in
+    problems that are unaccessible to a significant portion of IOI participants.
+    This includes but is not limited to hard textbook algorithms and advanced
+    areas in mathematics.
+
+    Still, note that the Syllabus must not be interpreted to restrict in 
+    any way the techniques that contestants are allowed to apply in solving 
+    the competition tasks.
+    
+    Examples: \emph{Calculus\/} in~\S\ref{subsubsec:other-mathematics}
+
+\item[\Cexmaybe\ Excluded, but open to discussion]~\\
+    As the Syllabus is a living document, there can be cases when we consider
+    bringing in some of the Excluded topics. Usually, the topics in question
+    are natural extensions of Included topics, or ones where drawing an exact
+    boundary is difficult. Should such topics appear, they will be temporarily
+    classified as ``Excluded, but open to discussion'', and by doing so we encourage 
+    all members of the IOI community to give us feedback on these topics.
+\end{description}
+
+\bigskip
+
+\noindent
+The rest of this document contains the classification of topics.
+%}}}
+
+
+\section {Computing Science}
+\label{subsec:computing-science}
+
+\subsection {Programming Fundamentals (PF)}%{{{
+\label{subsubsec:PF}
+
+    \subsubsection*{PF1. Fundamental programming constructs\rm (for abstract machines)}
+
+    \begin{myitemize}
+    \Iincluded\CC{Basic syntax and semantics of a higher-level language} (at least one of the specific languages available at an IOI, as announced in the \emph{Competition Rules\/} for that IOI)
+    \Iincluded\CC{Variables, types, expressions, and assignment}
+    \Iincluded\CC{Simple I/O}
+    \Iincluded\CC{Conditional and iterative control structures}
+    \Iincluded\CC{Functions and parameter passing}
+    \Icodeonly\CC{Structured decomposition}
+    \end{myitemize}
+
+    \subsubsection*{PF2. Algorithms and problem-solving}
+
+    \begin{myitemize}
+    \Icodeonly\CC{Problem-solving strategies} (understand--plan--do--check,
+        separation of concerns, generalization, specialization, case distinction, working backwards,
+        etc.)\footnote{See G. Polya: \emph{How to Solve It: A New Aspect of Mathematical Method},
+        Princeton Univ.\ Press, 1948}
+    \Icodeonly\CC{The role of algorithms in the problem-solving process}
+    \Icodeonly\CC{Implementation strategies for algorithms} (also see \S\ref{subsec:software-engineering}~SE1)
+    \Icodeonly\CC{Debugging strategies} (also see \S\ref{subsec:software-engineering}~SE3)
+    \Idefine\CC{The concept and properties of algorithms} (correctness, efficiency)
+    \end{myitemize}
+
+    \subsubsection*{PF3. Fundamental data structures}
+
+    \begin{myitemize}
+    \Iincluded\CC{Primitive types} (boolean, signed/unsigned integer, character)
+    \Iincluded\CC{Arrays} (incl. multicolumn dimensional arrays)
+    \Iincluded\CC{Strings and string processing}
+    \Idefine\CC{Static and stack allocation} (elementary automatic memory management)
+    \Idefine\CC{Linked structures} 
+    \Idefine\CC{Implementation strategies for graphs and trees}
+    \Idefine\CC{Strategies for choosing the right data structure}
+    \Icodeonly\CC{Elementary use of real numbers in numerically stable tasks}
+    \Icodeonly The floating-point representation of real numbers, the existence of precision issues.\footnote{Whenever possible, avoiding floating point computations completely is the preferred solution.}
+    \Icodeonly \CC{Pointers and references}
+    \end{myitemize}
+
+    \begin{myitemize}
+    \Inofocus \CC{Data representation in memory},
+    \Inofocus \CC{Heap allocation},
+    \Inofocus  \CC{Runtime storage management},
+    \Inofocus Using fractions to perform exact calculations.
+    \end{myitemize}
+    
+    \begin{myitemize}
+    \Iexcluded Non-trivial calculations on floating point numbers, manipulating precision errors
+    \end{myitemize}
+   
+    \begin{quote}
+    Regarding floating point numbers, there are well-known reasons why they
+    should be, in general, avoided at the IOI.\footnote{%
+    See G. Horv\'ath and T. Verhoeff: \emph{Numerical Difficulties in Pre-University Education and
+    Competitions}, Informatics in Education 2:21--38, 2003}
+    However, the currently used interface removes some of those issues.
+    In particular, it should now be safe to use floating point numbers
+    in some types of tasks -- e.g., to compute some Euclidean distances and 
+    return the smallest one.
+    \end{quote}
+
+    \subsubsection*{PF4. Recursion}
+
+    \begin{myitemize}
+    \Iincluded\CC{The concept of recursion}
+    \Iincluded\CC{Recursive mathematical functions}
+    \Iincluded\CC{Simple recursive procedures} (incl.\ mutual recursion)
+    \Icodeonly\CC{Divide-and-conquer strategies}
+    \Icodeonly\CC{Implementation of recursion}
+    \Icodeonly\CC{Recursive backtracking}
+    \end{myitemize}
+
+    \subsubsection*{PF5. Event-driven programming}
+
+    \begin{quote}
+    Some competition tasks may involve a dialog with a reactive environment.
+    Implementing such an interaction with the provided environment is \Cdefine.
+
+    Everything not directly related to the implementation of reactive tasks is \Cnofocus.
+    \end{quote}
+
+% }}}
+
+\subsection {Algorithms and Complexity (AL)}
+\label{subsubsec:AL}
+
+    \begin{quote}
+    We quote from the IEEE-CS Curriculum:
+
+    \sffamily\small
+    Algorithms are fundamental to computer science and software engineering.
+    The real-world performance of any software system depends only on two things:
+    (1)~the algorithms chosen and
+    (2)~the suitability and efficiency of the various layers of implementation.
+    Good algorithm design is therefore crucial for the performance of all software systems.
+    Moreover,
+    the study of algorithms provides insight into the intrinsic nature of the problem
+    as well as possible solution techniques independent of programming language,
+    programming paradigm, computer hardware, or any other implementation aspect.
+    \end{quote}
+
+    \subsubsection*{AL1. Basic algorithmic analysis}%{{{
+
+    \begin{myitemize}
+    \Idefine Algorithm specification, precondition, postcondition, correctness, invariants
+    \Icodeonly\CC{Asymptotic analysis of upper complexity bounds} (informally if possible)
+    \Icodeonly\CC{Big O notation}
+    \Icodeonly\CC{Standard complexity classes}: constant, logarithmic, linear, $\mathcal{O}(n \log n)$, quadratic, cubic, exponential, etc.
+    \Icodeonly\CC{Time and space tradeoffs in algorithms}
+    \Icodeonly Empirical performance measurements.
+    \end{myitemize}
+
+    \begin{myitemize}
+    \Inofocus \CC{Identifying differences among best, average, and worst case behaviors},
+    \Inofocus \CC{Little o, Omega, and Theta notation},
+    \Inofocus Tuning parameters to reduce running time, memory consumption or other measures of performance
+    \end{myitemize}
+  
+    \begin{myitemize}
+    \Iexcluded Asymptotic analysis of average complexity bounds
+    \Iexcluded Using recurrence relations to analyze recursive algorithms
+    \end{myitemize}
+  
+    %}}}
+    \subsubsection*{AL2. Algorithmic strategies}%{{{
+
+    \begin{myitemize}
+    \Icodeonly Simple loop design strategies
+    \Icodeonly\CC{Brute-force algorithms} (exhaustive search)
+    \Icodeonly\CC{Greedy algorithms}
+    \Icodeonly\CC{Divide-and-conquer}
+    \Icodeonly\CC{Backtracking} (recursive and non-recursive), \CC{Branch-and-bound}
+    \Icodeonly\CC{Dynamic programming}\footnote{The IEEE-CS Curriculum puts this under AL8, but we believe it belongs here.} 
+    \end{myitemize}
+  
+    \begin{myitemize}
+    \Inofocus Heuristics
+    \Inofocus Finding good features for machine learning tasks\footnote{E.g., finding a good way to classify images in the IOI 2013 Art class problem.}
+    \Inofocus Discrete approximation algorithms
+    \Inofocus Randomized algorithms.
+    \end{myitemize}
+  
+    \begin{myitemize}
+    \Iexcluded Clustering algorithms (e.g. $k$-means, $k$-nearest neighbor)
+    \Iexcluded Minimizing multi-variate functions using numerical approaches.
+    \end{myitemize}
+  
+    %}}}
+    \subsubsection*{AL3a. Algorithms}%{{{
+
+    \begin{myitemize}
+    \Icodeonly Simple algorithms involving integers: radix conversion, Euclid's algorithm, primality test by $\mathcal{O}(\sqrt{n})$ trial division, Sieve of Eratosthenes, factorization (by trial division or a sieve), efficient exponentiation
+    \Icodeonly Simple operations on arbitrary precision integers (addition, subtraction, simple multiplication)\footnote{The necessity to implement these operations should be obvious from the problem statement.}
+    \Icodeonly Simple array manipulation (filling, shifting, rotating, reversal, resizing, minimum/maximum, prefix sums, histogram, bucket sort)
+    \Icodeonly Simple string algorithms (e.g., naive substring search)
+    \Icodeonly\CC{sequential} processing/search \CC{and binary search}
+    \Icodeonly \CC{Quicksort} and Quickselect to find the $k$-th smallest element.
+    \Icodeonly\CC{$\mathcal{O}(n \log n)$} worst-case \CC{sorting algorithms (heap sort, merge sort)}
+    \Icodeonly Traversals of ordered trees (pre-, in-, and post-order)
+    \Icodeonly\CC{Depth- and breadth-first traversals}
+    \Icodeonly Applications of the depth-first traversal tree, such as topological ordering and Euler paths/cycles
+    \Icodeonly Finding connected components and transitive closures.
+    \Icodeonly Shortest-path algorithms (Dijkstra, Bellman-Ford, Floyd-Warshall)
+    \Icodeonly Minimum spanning tree (Jarn\'\i k-Prim and Kruskal algorithms)
+    \Icodeonly $O(VE)$ time algorithm for computing maximum bipartite matching.
+    \Icodeonly Biconnectivity in undirected graphs (bridges, articulation points).
+    \Icodeonly Connectivity in directed graphs (strongly connected components).
+    \Icodeonly Basics of combinatorial game theory, winning and losing positions, minimax algorithm for optimal game playing
+    \end{myitemize}
+
+    \begin{myitemize}
+    \Iexmaybe Maximum flow. Flow/cut duality theorem.
+    \end{myitemize}
+
+    \begin{myitemize}
+    \Iexcluded Optimization problems that are easiest to analyze using matroid theory. Problems based on matroid intersecions (except for bipartite matching).
+    \Iexcluded Lexicographical BFS, maximum adjacency search and their properties
+    \end{myitemize}
+ 
+    %}}}
+    \subsubsection*{AL3b. Data structures}%{{{
+  
+    \begin{myitemize}
+    \Idefine Stacks and queues
+    \Icodeonly \CC{Representations of graphs (adjacency lists, adjacency matrix)}
+    \Idefine Binary heap data structures
+    \Icodeonly Representation of disjoint sets: the Union-Find data structure.
+    \Idefine Statically balanced binary search trees. Instances of this include binary index trees (also known as Fenwick trees)
+    and segment trees (also known as interval trees and tournament trees).\footnote{Not to be confused with similarly-named data structures used in computational geometry.}
+    \Icodeonly {Balanced binary search trees}\footnote{Problems will not be designed to distinguish between
+    the implementation of BBSTs, such as treaps, splay trees, AVL trees, or scapegoat trees}
+    \Idefine Augmented binary search trees
+    \Icodeonly $O(\log n)$ time algorithms for answering lowest common ancestor queries in a static rooted tree.\footnote{Once again, different implementations meeting this requirement will not be distinguished.}
+    \Icodeonly Creating persistent data structures by path copying.%\footnote{Gains in memory using methods such as fat-node will not be distinguished}}
+    \Icodeonly Nesting of data structures, such as having a sequence of sets.
+    \Idefine Tries
+    \end{myitemize}
+
+    \begin{myitemize}
+    \Iexmaybe String algorithms and data structures: there is evidence that the inter-reducibility between KMP, Rabin-Karp hashing, suffix arrays/tree, suffix automaton, and Aho-Corasick makes them difficult to separate.
+    \Iexmaybe Heavy-light decomposition and separator structures for static trees.
+    \Iexmaybe Data structures for dynamically changing trees and their use in graph algorithms.
+    \end{myitemize}
+
+    \begin{myitemize}
+    \Iexcluded Complex heap variants such as binomial and Fibonacci heaps,
+    \Iexcluded Using and implementing \CC{hash tables} (incl. strategies to resolve collisions)
+    \Iexcluded Two-dimensional tree-like data structures (such as a 2D statically balanced binary tree or a treap of treaps) used for 2D queries.
+    \Iexcluded Fat nodes and other more complicated ways of implementing persistent data structures.
+    \end{myitemize}
+
+    %}}}
+    \subsubsection*{AL4. Distributed algorithms}%{{{
+
+    \begin{quote}
+    This entire section is \Cnofocus.
+    \end{quote}
+
+    %}}}
+    \subsubsection*{AL5. Basic computability}%{{{
+
+    \begin{quote}
+    All topics related to computability are \Cexcluded.
+    This includes the following:
+    \CC{Tractable and intractable problems};
+    \CC{Uncomputable functions};
+    \CC{The halting problem};
+    \CC{Implications of uncomputability}.
+    
+    However, see AL7 for basic computational models.
+    \end{quote}
+
+    %}}}
+    \subsubsection*{AL6. The complexity classes P and NP}%{{{
+
+    \begin{quote}
+    Topics related to non-determinism, proofs of NP-hardness (reductions),
+    and everything related is \Cexcluded.
+
+    Note that this section only covers the results usually contained in
+    undergraduate and graduate courses on formal languages and 
+    computational complexity. The classification of these topics
+    as \Cexcluded\ does not mean that an NP-hard 
+    problem cannot appear at an IOI.
+    \end{quote}
+
+    %}}}
+    \subsubsection*{AL7. Automata and grammars}%{{{
+
+    \begin{myitemize}
+    \Idefine Understanding a simple grammar in Backus-Naur form
+    \end{myitemize}
+
+    \begin{myitemize}
+    \Inofocus Formal definition and properties of finite-state machines,
+    \Inofocus Context-free grammars and related rewriting systems,
+    \Inofocus Regular expressions
+    \end{myitemize}
+  
+    \begin{myitemize}
+    \Iexcluded Properties other than the fact that automata are graphs and that grammars have parse trees.
+    \end{myitemize}
+  
+    %}}}
+    \subsubsection*{AL8. Advanced algorithmic analysis}%{{{
+
+    \begin{myitemize}
+    \Icodeonly Amortized analysis.
+    \end{myitemize}
+
+    \begin{myitemize}
+    \Inofocus Online algorithms
+    \Inofocus Randomized algorithms
+    \end{myitemize}
+
+    \begin{myitemize}
+    \Iexcluded Alpha-beta pruning
+    \end{myitemize}
+    
+    %}}}
+    \subsubsection*{AL9. Cryptographic algorithms}%{{{
+
+    \begin{quote}
+    This entire section is \Cnofocus.
+    \end{quote}
+
+    %}}}
+    \subsubsection*{AL10. Geometric algorithms}%{{{
+
+    \begin{quote}
+    In general, the ISC has a strong preference towards problems that can be solved using integer
+    arithmetics to avoid precision issues. This may include representing some computed values as 
+    exact fractions, but extensive use of such fractions in calculations is discouraged.
+
+    Additionally, if a problem uses two-dimensional objects, the ISC prefers problems in which such objects are rectilinear.
+    \end{quote}
+
+    \begin{myitemize}
+    \Icodeonly Representing points, vectors, lines, line segments.
+    \Icodeonly Checking for collinear points, parallel/orthogonal vectors and clockwise turns (for example, by using dot products and cross products).
+    \Icodeonly Intersection of two lines.
+    \Icodeonly Computing the area of a polygon from the coordinates of its vertices.\footnote{The recommended way of doing so is to use cross products or an equivalent formula. TODO url}
+    \Icodeonly Checking whether a (general/convex) polygon contains a point.
+    \Icodeonly Coordinate compression.
+    \Icodeonly $\mathcal{O}(n\log{n})$ time algorithms for convex hull
+    \Icodeonly Sweeping line method
+    \end{myitemize}
+  
+    \begin{myitemize}
+    \Iexcluded Point-line duality
+    \Iexcluded Halfspace intersection, Voronoi diagrams, Delaunay triangulations.
+    \Iexcluded Computing coordinates of circle intersections against lines and circles.
+    \Iexcluded Linear programming in 3 or more dimensions and its geometric interpretations.
+    \Iexcluded Center of mass of a 2D object.
+    \Iexcluded Computing and representing the composition of geometric transformations if the knowledge of linear algebra gives an advantage.
+    \end{myitemize}
+
+    %}}}
+    \subsubsection*{AL11. Parallel algorithms}%{{{
+
+    \begin{quote}
+    This entire section is \Cnofocus.
+    \end{quote}
+
+    %}}}
+
+
+\section {Mathematics}
+\label{subsec:mathematics}
+
+\subsection {Arithmetics and Geometry}%{{{
+\label{subsubsec:NG}
+
+    \begin{myitemize}
+    \Iincluded Integers, operations (incl.\ exponentiation), comparison
+    \Iincluded Basic properties of integers (sign, parity, divisibility)
+    \Iincluded Basic modular arithmetic: addition, subtraction, \\ multiplication
+    \Icodeonly Prime numbers
+    \Iincluded Fractions, percentages
+    \Iincluded Line, line segment, angle, triangle, rectangle, square, circle
+    \Iincluded Point, vector, coordinates in the plane
+    \Iincluded Polygon (vertex, side/edge, simple, convex, inside, area)
+    \Idefine Euclidean distances
+    \Icodeonly Pythagorean theorem
+    \end{myitemize}
+
+    %{Excluded, but open to discussion}
+    \begin{myitemize}
+    \Iexmaybe Additional topics from number theory.
+    \end{myitemize}
+    
+    %{Explicitly excluded\/}:
+    \begin{myitemize}
+    \Iexcluded geometry in 3D or higher dimensional spaces
+    \Iexcluded analyzing and increasing precision of floating-point \\ computations
+    \Iexcluded modular division and inverse elements
+    \Iexcluded complex numbers,
+    \Iexcluded general conics (parabolas, hyperbolas, ellipses)
+    \Iexcluded trigonometric functions
+    \end{myitemize}
+
+%}}}
+\subsection {Discrete Structures (DS)}%{{{
+\label{subsubsec:DS}
+
+    \subsubsection*{DS1. Functions, relations, and sets}
+
+        \begin{myitemize}
+        \Idefine\CC{Functions (surjections, injections, inverses, composition)}
+        \Idefine\CC{Relations (reflexivity, symmetry, transitivity, equivalence relations,
+        total/linear order relations, lexicographic order)}
+        \Idefine\CC{Sets (inclusion/exclusion, complements, Cartesian products, power sets)}
+        \end{myitemize}
+
+        %{Explicitly excluded\/}:
+        \begin{myitemize}
+        \Iexcluded{Cardinality and countability} (of infinite sets)
+        \end{myitemize}
+  
+    \subsubsection*{DS2. Basic logic}
+
+        \begin{myitemize}
+        \Iincluded First-order logic
+        \Iincluded\CC{Logical connectives} (incl.\ their basic properties)
+        \Iincluded\CC{Truth tables}
+        \Iincluded\CC{Universal and existential quantification} (Note: statements should avoid definitions with nested quantifiers whenever possible.)
+        \Icodeonly\CC{Modus ponens and modus tollens}
+        \end{myitemize}
+
+        %{Out of focus\/}:
+        \begin{myitemize}
+        \Inofocus \CC{Normal forms}
+        \end{myitemize}
+        
+        %{Explicitly excluded\/}:
+        \begin{myitemize}
+        \Iexcluded \CC{Validity}
+        \Iexcluded \CC{Limitations of predicate logic}
+        \end{myitemize}
+
+    \subsubsection*{DS3. Proof techniques}
+
+        \begin{myitemize}
+        \Idefine\CC{Notions of implication, converse, inverse, contrapositive, negation, and contradiction}
+        \Icodeonly\CC{Direct proofs, proofs by: counterexample, contraposition, contradiction}
+        \Icodeonly\CC{Mathematical induction}
+        \Icodeonly\CC{Strong induction} (also known as complete induction)
+        \Iincluded\CC{Recursive mathematical definitions} (incl.\ mutually recursive definitions)
+        \end{myitemize}
+
+    \subsubsection*{DS4. Basics of counting}
+
+        \begin{myitemize}
+        \Iincluded\CC{Counting arguments (sum and product rule, arithmetic and geometric progressions, Fibonacci numbers)}
+        \Idefine\CC{Permutations and combinations (basic definitions)}
+        \Idefine Factorial function, binomial coefficients
+        \Icodeonly\CC{Inclusion-exclusion principle}
+        \Icodeonly\CC{Pigeonhole principle}
+        \Icodeonly\CC{Pascal's identity}, \CC{Binomial theorem}
+        \end{myitemize}
+
+        %{Explicitly excluded\/}:
+        \begin{myitemize}
+        \Iexcluded Solving of recurrence relations
+        \Iexcluded Burnside lemma
+        \end{myitemize}
+  
+    \subsubsection*{DS5. Graphs and trees}
+
+        \begin{myitemize}
+        \Idefine\CC{Trees} and their basic properties, rooted trees
+        \Idefine\CC{Undirected graphs} (degree, path, cycle, connectedness, Euler/Hamil\-ton path/cycle, handshaking lemma)
+        \Idefine\CC{Directed graphs} (in-degree, out-degree, directed path/cycle, Euler/Hamilton path/cycle)
+        \Idefine\CC{Spanning trees}
+        \Idefine\CC{Traversal strategies}
+        \Idefine `Decorated' graphs with edge/node labels, weights, colors
+        \Idefine Multigraphs, graphs with self-loops
+        \Idefine Bipartite graphs
+        \Icodeonly Planar graphs
+        \end{myitemize}
+
+        %{Explicitly Excluded}
+        \begin{myitemize}
+        \Iexcluded Hypergraphs
+        \Iexcluded Specific graph classes such as perfect graphs
+        \Iexcluded Structural parameters such as treewidth and expansion
+        \Iexcluded Planarity testing
+        \Iexcluded Finding separators for planar graphs
+        \end{myitemize}
+
+    \subsubsection*{DS6. Discrete probability}
+  
+        \begin{quote}
+        Applications where everything is finite (and thus arguments about probability can be easily
+        turned into combinatorial arguments) are \Cnofocus, everything more complicated
+        is \Cexcluded.
+        \end{quote}
+
+%}}}
+\subsection {Other Areas in Mathematics}%{{{
+\label{subsubsec:other-mathematics}
+
+    %{Explicitly excluded\/}:
+    \begin{myitemize}
+    \Iexcluded Geometry in three or more dimensions.
+    \Iexcluded  Linear algebra, including (but not limited to):
+        \begin{myitemize}
+        \item Matrix multiplication, exponentiation, \\
+              inversion, and Gaussian elimination
+        \item Fast Fourier transform
+        \end{myitemize}
+    \Iexcluded Calculus
+    \Iexcluded Theory of combinatorial games, e.g., NIM game, Sprague-Grundy theory
+    \Iexcluded Statistics
+    \end{myitemize}
+
+%}}}
+
+
+\end{document}
