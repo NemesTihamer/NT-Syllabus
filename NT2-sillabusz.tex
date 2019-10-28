@@ -46,7 +46,7 @@
 \newcommand{\Iexcluded}{\item[\hbox to 1.8em{\cexcl\hfill}]}
 
 \newcolumntype{C}{ >{\centering\arraybackslash} m{1.2cm} }
-\newcommand{\Ctable}[1]{
+\newcommand{\ctable}[1]{
     \begin{center}
         \begin{tabular}{ | C | C | C | m{8cm} | }
         \hline
@@ -110,7 +110,7 @@ Minden javaslatot, hozzászólást és segítséget szívesen fogadunk.
 
 \section{Bevezetés}\label{sec:intro}%{{{
 
-Az IOI Syllabus-hoz képest az NT Sillabusz erősen rövidített az áttekinthetőség kedvéért.
+Az NT Sillabusz az IOI Syllabus-hoz képest erősen rövidített, az áttekinthetőség kedvéért.
 A konkrét tárgyi ismereteket és módszereket soroljuk fel, míg a készségekről (például hibakeresés)
 és eszközök használatáról (például fejlesztőkörnyezet) nem teszünk említést.
 
@@ -292,67 +292,132 @@ The rest of this document contains the classification of topics.
 
     \subsubsection*{PA1. Alapvető programozási eszközök} % {PF1. Fundamental programming constructs}
 
-    \Ctable {
+    \ctable {
         \cincl & \cincl & \cincl &
-        Alapvető szintaxisa és szemantikája egy versenyen megengedett programozási nyelvnek \\ \hline
+        Alapvető szintaxisa és szemantikája egy versenyen megengedett programozási nyelvnek 
         % Basic syntax and semantics of a higher-level language
+        \\ \hline
         
         \cincl & \cincl & \cincl &
-        Változók, típusok, műveletek, kifejezések és értékadás \\ \hline
+        Változók, típusok, műveletek, kifejezések és értékadás
         % Variables, types, expressions, and assignment
+        \\ \hline
         
         \cincl & \cincl & \cincl &
-        Elágazások és ciklusok \\ \hline
+        Elágazások és ciklusok
         % Conditional and iterative control structures
+        \\ \hline
         
         \cincl & \cincl & \cincl &
-        Függvények és paraméterátadás \\ \hline
+        Függvények és paraméterátadás 
         % Functions and parameter passing
+        \\ \hline
         
         \cincl & \cincl & \cincl &
-        Egyszerű beolvasás és kiírás (A standard input/output ismerete kell.) \\ \hline
+        Egyszerű beolvasás és kiírás (A standard input/output ismerete kell.) 
         % Simple I/O
+        \\ \hline
         
         \cemay & \cemay & \cemay &
-        Fájlba írás és olvasás \\ \hline
+        Fájlba írás és olvasás
+        \\ \hline
     }
 
 
     \subsubsection*{PA2. Alapvető adatszerkezetek} % {PF3. Fundamental data structures}
 
-    \begin{myitemize}
-    \Iincluded\CC{Elemi adattípusok} (logikai, egész, karakter) % {Primitive types} (boolean, signed/unsigned integer, character)
-    \Iincluded\CC{Tömbök}  % {Arrays} (incl. multicolumn dimensional arrays)
-    \Iincluded\CC{Két vagy több dimenziós tömbök}
-    \Iincluded\CC{Karekterláncok (string) és feldolgozásuk} % {Strings and string processing}
-    \Icodeonly\CC{Valós számok használata egyszerű és numerikusan stabil számításokra} % {Elementary use of real numbers in numerically stable tasks}
-    \Icodeonly A valós számok lebegőpontos reprezentációja, pontossági hibák. \footnote{Amikor csak lehetséges, a lebegőpontos számítások teljes elkerülése az előnyösebb megoldás.}
-    % \Icodeonly The floating-point representation of real numbers, the existence of precision issues.\footnote{Whenever possible, avoiding floating point computations completely is the preferred solution.}
-    \Icodeonly\CC{Mutatók (pointer) és referenciák}
-    \Iexmaybe \CC{Láncolt adatszerkezetek} % {Linked structures} 
-    \Iexmaybe Törtszámok használata pontos számításokra % \Inofocus Using fractions to perform exact calculations.
-    
-    \end{myitemize}
+    \ctable {
+        
+        \cincl & \cincl & \cincl &
+        Elemi adattípusok (logikai, egész, karakter) 
+        % Primitive types (boolean, signed/unsigned integer, character)
+        \\ \hline
+        
+        \cincl & \cincl & \cincl &
+        Tömbök 
+        % Arrays (incl. multicolumn dimensional arrays)
+        \\ \hline
 
-    \begin{myitemize}
-    \Inofocus \CC{Adatok memóriaképe} % {Data representation in memory},
-    \Inofocus \CC{Dinamikus memóriafoglalás} % {Heap allocation},
-    \end{myitemize}
-    
-    \begin{myitemize}
-    \Iexcluded Nemtriviális számítások lebegőpontos számokon, pontossági hibák kiküszöbölése % Non-trivial calculations on floating point numbers, manipulating precision errors
-    \end{myitemize}
+        \cincl & \cincl & \cincl &
+        Két vagy több dimenziós tömbök
+        \\ \hline
+        
+        \cincl & \cincl & \cincl &
+        Karekterláncok (string) és feldolgozásuk 
+        % Strings and string processing
+        \\ \hline
+        
+        \ccode & \ccode & \ccode &
+        Valós számok használata egyszerű és numerikusan stabil számításokra 
+        % Elementary use of real numbers in numerically stable tasks
+        \\ \hline
+        
+        \ccode & \ccode & \ccode & 
+        A valós számok lebegőpontos reprezentációja, pontossági hibák léte.
+        \footnote{Amikor csak lehetséges, a lebegőpontos számítások teljes elkerülése az előnyösebb megoldás.} % TODO: footnote nincs sehol.
+        % \Icodeonly The floating-point representation of real numbers, the existence of precision issues.
+        % \footnote{Whenever possible, avoiding floating point computations completely is the preferred solution.}
+        \\ \hline
+        
+        \cemay & \ccode & \cincl &
+        Mutatók (pointer) és referenciák
+        % Pointers and references
+        \\ \hline
+        
+        \cexcl & \cemay & \cincl &
+        Láncolt adatszerkezetek
+        % Linked structures 
+        \\ \hline
+        
+        \cemay & \cemay & \ccode &
+        Törtszámok használata pontos számításokra
+        % \Inofocus Using fractions to perform exact calculations.
+        \\ \hline
+        
+        \cnfoc & \cnfoc & \cnfoc &
+        Adatok memóriaképe
+        % Data representation in memory
+        \\ \hline
+        
+        \cnfoc & \cnfoc & \cnfoc &
+        Dinamikus memóriafoglalás
+        % {Heap allocation}
+        \\ \hline
+
+        \cexcl & \cexcl & \cexcl &
+        Nemtriviális számítások lebegőpontos számokon, pontossági hibák kiküszöbölése
+        % Non-trivial calculations on floating point numbers, manipulating precision errors
+        \\ \hline
+    }
 
     \subsubsection*{PA3. Rekurzió} %{PF4. Recursion}
 
-    \begin{myitemize}
-    \Iincluded\CC{A rekurzió fogalma} % {The concept of recursion}
-    \Iincluded\CC{Rekurzív matematikai függvények} % {Recursive mathematical functions}
-    \Iincluded\CC{Egyszerű rekurzív eljárások} (több eljárás kölcsönös rekurziója is) % {Simple recursive procedures} (incl.\ mutual recursion)
-    \Icodeonly\CC{Rekurzív függvények implementálása} % {Implementation of recursion}
-    \Icodeonly\CC{A visszalépéses keresés rekurzív változata} % {Recursive backtracking}
-    \Iexmaybe \CC{Oszd meg és uralkodj stratégia} % {Divide-and-conquer strategies}
-    \end{myitemize}
+    \ctable {
+        \cincl & \cincl & \cincl &
+        A rekurzió fogalma
+        % The concept of recursion
+        \\ \hline
+
+        \ccode & \cincl & \cincl &
+        Rekurzív matematikai függvények
+        % Recursive mathematical functions
+        \\ \hline
+
+        \cincl & \cincl & \cincl &
+        Egyszerű rekurzív függvények (több függvény kölcsönös rekurziója is)
+        % Simple recursive procedures (incl. mutual recursion)
+        \\ \hline
+
+        \cemay & \ccode & \ccode &
+        A visszalépéses keresés rekurzív változata
+        % Recursive backtracking
+        \\ \hline
+
+        \cexcl & \cemay & \cincl &
+        Oszd meg és uralkodj stratégia
+        % Divide-and-conquer strategies
+        \\ \hline
+    }
 
 % }}}
 
