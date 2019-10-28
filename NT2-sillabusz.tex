@@ -78,9 +78,10 @@ Jelen verzió még szerkesztés alatt áll, nem teljes, és nem megosztásra sz�
 
 \medskip
 
-A Nemes Tihamér Sillabusz az IOI Syllabus mintájára készül, és jelenleg még fejlesztés alatt áll.
-Ha eléri célját, egy hivatalos dokumentum alakul ki belőle, amelynek aktuális verzióját a versenybizottság
-hagyja jóvá és teszi közzé minden évben. Az évek során a dokumentum változhat, fejlődhet.
+A Nemes Tihamér Sillabusz (továbbiakban NT Sillabusz) az IOI Syllabus mintájára készül,
+és jelenleg még fejlesztés alatt áll. Ha eléri célját, egy hivatalos dokumentum alakul ki belőle,
+amelynek aktuális verzióját a versenybizottság hagyja jóvá és teszi közzé minden évben.
+Az évek során a dokumentum változhat, fejlődhet.
 
 %}}}
 
@@ -90,14 +91,19 @@ Szívesen fogadunk bármilyen visszajelzést és javaslatot a sillabusszal kapcs
 a jelenlegi szerkesztő e-mail címére küldve (\verb!laszlo.nikhazy@gmail.com!).
 
 Azok számára, akik szeretnének hozzájárulni a dokumentum fejlesztéséhez, vagy hozzászólni,
-javaslatokat tenni a tartalmához, a sillabusz GitHub repository-jában találhatók információk.
+javaslatokat tenni a tartalmához, az NT Sillabusz GitHub repository-jában találhatók információk.
 Minden javaslatot, hozzászólást és segítséget szívesen fogadunk.
 \url{https://github.com/niklaci/NT-Syllabus}.
 %}}}
 
-\section{Introduction}\label{sec:intro}%{{{
+\section{Bevezetés}\label{sec:intro}%{{{
 
-During the years, the Syllabus has evolved. Currently it has the following purposes:
+Az IOI Syllabus-hoz képest az NT Sillabusz erősen rövidített az áttekinthetőség kedvéért.
+A konkrét tárgyi ismereteket és módszereket soroljuk fel, míg a készségekről (például hibakeresés)
+és eszközök használatáról (például fejlesztőkörnyezet) nem teszünk említést. \textbf{Ez a dokumentum kifejezetten
+a 2. és 3. forduló (gépes) feladatairól szól}. Az első fordulóban szélesebb körből fordulhatnak elő feladatok,
+mert ott elvárt egy-egy (esetleg ismeretlen) számítástechnikai témakör alapszintű megértése a feladatleírás alapján.
+A Sillabusz az alábbi célokat szolgálja.
 
 \begin{itemize}
 \item
@@ -263,92 +269,60 @@ The rest of this document contains the classification of topics.
 %}}}
 
 
-\section {Computing Science}
+\section {Számítástechnika, számítástudomány} % {Computing Science}
 \label{subsec:computing-science}
 
-\subsection {Programming Fundamentals (PF)}%{{{
+\subsection {Progamozási Alapok (PA)} %{Programming Fundamentals (PF)}%{{{
 \label{subsubsec:PF}
 
-    \subsubsection*{PF1. Fundamental programming constructs\rm (for abstract machines)}
+    \subsubsection*{PA1. Alapvető programozási eszközök} % {PF1. Fundamental programming constructs}
 
     \begin{myitemize}
-    \Iincluded\CC{Basic syntax and semantics of a higher-level language} (at least one of the specific languages available at an IOI, as announced in the \emph{Competition Rules\/} for that IOI)
-    \Iincluded\CC{Variables, types, expressions, and assignment}
-    \Iincluded\CC{Simple I/O}
-    \Iincluded\CC{Conditional and iterative control structures}
-    \Iincluded\CC{Functions and parameter passing}
-    \Icodeonly\CC{Structured decomposition}
+    \Iincluded\CC{Alapvető szintaxisa és szemantikája egy versenyen megengedett programozási nyelvnek} % {Basic syntax and semantics of a higher-level language} 
+    \Iincluded\CC{Változók, típusok, műveletek, kifejezések és értékadás} % {Variables, types, expressions, and assignment}
+    \Iincluded\CC{Egyszerű beolvasás és kiírás} (A standard input/output ismerete kell.) % {Simple I/O}
+    \Iexmaybe \CC{Fájlba írás és olvasás}
+    \Iincluded\CC{Elágazások és ciklusok}  % {Conditional and iterative control structures}
+    \Iincluded\CC{Függvények és paraméterátadás} % {Functions and parameter passing}
     \end{myitemize}
 
-    \subsubsection*{PF2. Algorithms and problem-solving}
+
+
+    \subsubsection*{PA2. Alapvető adatszerkezetek} % {PF3. Fundamental data structures}
 
     \begin{myitemize}
-    \Icodeonly\CC{Problem-solving strategies} (understand--plan--do--check,
-        separation of concerns, generalization, specialization, case distinction, working backwards,
-        etc.)\footnote{See G. Polya: \emph{How to Solve It: A New Aspect of Mathematical Method},
-        Princeton Univ.\ Press, 1948}
-    \Icodeonly\CC{The role of algorithms in the problem-solving process}
-    \Icodeonly\CC{Implementation strategies for algorithms} (also see \S\ref{subsec:software-engineering}~SE1)
-    \Icodeonly\CC{Debugging strategies} (also see \S\ref{subsec:software-engineering}~SE3)
-    \Idefine\CC{The concept and properties of algorithms} (correctness, efficiency)
-    \end{myitemize}
-
-    \subsubsection*{PF3. Fundamental data structures}
-
-    \begin{myitemize}
-    \Iincluded\CC{Primitive types} (boolean, signed/unsigned integer, character)
-    \Iincluded\CC{Arrays} (incl. multicolumn dimensional arrays)
-    \Iincluded\CC{Strings and string processing}
-    \Idefine\CC{Static and stack allocation} (elementary automatic memory management)
-    \Idefine\CC{Linked structures} 
-    \Idefine\CC{Implementation strategies for graphs and trees}
-    \Idefine\CC{Strategies for choosing the right data structure}
-    \Icodeonly\CC{Elementary use of real numbers in numerically stable tasks}
-    \Icodeonly The floating-point representation of real numbers, the existence of precision issues.\footnote{Whenever possible, avoiding floating point computations completely is the preferred solution.}
-    \Icodeonly \CC{Pointers and references}
+    \Iincluded\CC{Elemi adattípusok} (logikai, egész, karakter) % {Primitive types} (boolean, signed/unsigned integer, character)
+    \Iincluded\CC{Tömbök}  % {Arrays} (incl. multicolumn dimensional arrays)
+    \Iincluded\CC{Két vagy több dimenziós tömbök}
+    \Iincluded\CC{Karekterláncok (string) és feldolgozásuk} % {Strings and string processing}
+    \Icodeonly\CC{Valós számok használata egyszerű és numerikusan stabil számításokra} % {Elementary use of real numbers in numerically stable tasks}
+    \Icodeonly A valós számok lebegőpontos reprezentációja, pontossági hibák. \footnote{Amikor csak lehetséges, a lebegőpontos számítások teljes elkerülése az előnyösebb megoldás.}
+    % \Icodeonly The floating-point representation of real numbers, the existence of precision issues.\footnote{Whenever possible, avoiding floating point computations completely is the preferred solution.}
+    \Icodeonly\CC{Mutatók (pointer) és referenciák}
+    \Iexmaybe \CC{Láncolt adatszerkezetek} % {Linked structures} 
+    \Iexmaybe Törtszámok használata pontos számításokra % \Inofocus Using fractions to perform exact calculations.
+    
     \end{myitemize}
 
     \begin{myitemize}
-    \Inofocus \CC{Data representation in memory},
-    \Inofocus \CC{Heap allocation},
-    \Inofocus  \CC{Runtime storage management},
-    \Inofocus Using fractions to perform exact calculations.
+    \Inofocus \CC{Adatok memóriaképe} % {Data representation in memory},
+    \Inofocus \CC{Dinamikus memóriafoglalás} % {Heap allocation},
     \end{myitemize}
     
     \begin{myitemize}
-    \Iexcluded Non-trivial calculations on floating point numbers, manipulating precision errors
+    \Iexcluded Nemtriviális számítások lebegőpontos számokon, pontossági hibák kiküszöbölése % Non-trivial calculations on floating point numbers, manipulating precision errors
     \end{myitemize}
-   
-    \begin{quote}
-    Regarding floating point numbers, there are well-known reasons why they
-    should be, in general, avoided at the IOI.\footnote{%
-    See G. Horv\'ath and T. Verhoeff: \emph{Numerical Difficulties in Pre-University Education and
-    Competitions}, Informatics in Education 2:21--38, 2003}
-    However, the currently used interface removes some of those issues.
-    In particular, it should now be safe to use floating point numbers
-    in some types of tasks -- e.g., to compute some Euclidean distances and 
-    return the smallest one.
-    \end{quote}
 
-    \subsubsection*{PF4. Recursion}
+    \subsubsection*{PA3. Rekurzió} %{PF4. Recursion}
 
     \begin{myitemize}
-    \Iincluded\CC{The concept of recursion}
-    \Iincluded\CC{Recursive mathematical functions}
-    \Iincluded\CC{Simple recursive procedures} (incl.\ mutual recursion)
-    \Icodeonly\CC{Divide-and-conquer strategies}
-    \Icodeonly\CC{Implementation of recursion}
-    \Icodeonly\CC{Recursive backtracking}
+    \Iincluded\CC{A rekurzió fogalma} % {The concept of recursion}
+    \Iincluded\CC{Rekurzív matematikai függvények} % {Recursive mathematical functions}
+    \Iincluded\CC{Egyszerű rekurzív eljárások} (több eljárás kölcsönös rekurziója is) % {Simple recursive procedures} (incl.\ mutual recursion)
+    \Icodeonly\CC{Rekurzív függvények implementálása} % {Implementation of recursion}
+    \Icodeonly\CC{A visszalépéses keresés rekurzív változata} % {Recursive backtracking}
+    \Iexmaybe \CC{Oszd meg és uralkodj stratégia} % {Divide-and-conquer strategies}
     \end{myitemize}
-
-    \subsubsection*{PF5. Event-driven programming}
-
-    \begin{quote}
-    Some competition tasks may involve a dialog with a reactive environment.
-    Implementing such an interaction with the provided environment is \Cdefine.
-
-    Everything not directly related to the implementation of reactive tasks is \Cnofocus.
-    \end{quote}
 
 % }}}
 
