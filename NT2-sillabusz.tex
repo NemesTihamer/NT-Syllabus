@@ -6,6 +6,7 @@
 \usepackage{sectsty}
 \usepackage{enumitem}
 \usepackage{array}
+\usepackage{longtable}
 \usepackage{amsfonts}
 \usepackage{pifont}
 \usepackage{fontawesome}
@@ -48,11 +49,12 @@
 \newcolumntype{C}{ >{\centering\arraybackslash} m{1.2cm} }
 \newcommand{\ctable}[1]{
     \begin{center}
-        \begin{tabular}{ | C | C | C | m{8cm} | }
+        \begin{longtable}{ | C | C | C | m{8cm} | }
         \hline
         \textbf{NT1} & \textbf{NT2} & \textbf{OKTV} & \multicolumn{1}{|c|}{\textbf{Leírás}} \\ \hline
+        \endhead
         #1
-        \end{tabular}
+        \end{longtable}
     \end{center}    
 }
 
@@ -287,7 +289,7 @@ The rest of this document contains the classification of topics.
 \section {Számítástechnika, számítástudomány} % {Computing Science}
 \label{subsec:computing-science}
 
-\subsection {Progamozási Alapok (PA)} %{Programming Fundamentals (PF)}%{{{
+\subsection {Progamozási Alapok (PA)} %{Programming Fundamentals (PF)}
 \label{subsubsec:PF}
 
     \subsubsection*{PA1. Alapvető programozási eszközök} % {PF1. Fundamental programming constructs}
@@ -419,73 +421,140 @@ The rest of this document contains the classification of topics.
         \\ \hline
     }
 
-% }}}
 
-\subsection {Algorithms and Complexity (AL)}
+\subsection {Algoritmusok és komplexitásuk (AL)} % {Algorithms and Complexity (AL)}
 \label{subsubsec:AL}
 
-    \begin{quote}
-    We quote from the IEEE-CS Curriculum:
+    \subsubsection*{AL1. Algoritmusok elemzése alapszinten} % Basic algorithmic analysis
 
-    \sffamily\small
-    Algorithms are fundamental to computer science and software engineering.
-    The real-world performance of any software system depends only on two things:
-    (1)~the algorithms chosen and
-    (2)~the suitability and efficiency of the various layers of implementation.
-    Good algorithm design is therefore crucial for the performance of all software systems.
-    Moreover,
-    the study of algorithms provides insight into the intrinsic nature of the problem
-    as well as possible solution techniques independent of programming language,
-    programming paradigm, computer hardware, or any other implementation aspect.
-    \end{quote}
+    \ctable {
+        \cdef & \cdef & \cdef &
+        Algoritmus specifikáció, előfeltétel, utófeltétel, helyesség, invariánsok
+        % Algorithm specification, precondition, postcondition, correctness, invariants
+        \\ \hline
 
-    \subsubsection*{AL1. Basic algorithmic analysis}%{{{
+        \ccode & \ccode & \ccode &
+        Aszimptotikus felső becslés a komplexitásra (lehetőleg nem formálisan)
+        % Asymptotic analysis of upper complexity bounds (informally if possible)
+        \\ \hline
+        
+        \cexcl & \ccode & \cdef &
+        $\mathcal{O}$ (ordó) jelölés a komplexitásra
+        % Big O notation
+        \\ \hline
 
-    \begin{myitemize}
-    \Idefine Algorithm specification, precondition, postcondition, correctness, invariants
-    \Icodeonly\CC{Asymptotic analysis of upper complexity bounds} (informally if possible)
-    \Icodeonly\CC{Big O notation}
-    \Icodeonly\CC{Standard complexity classes}: constant, logarithmic, linear, $\mathcal{O}(n \log n)$, quadratic, cubic, exponential, etc.
-    \Icodeonly\CC{Time and space tradeoffs in algorithms}
-    \Icodeonly Empirical performance measurements.
-    \end{myitemize}
+        \ccode & \ccode & \ccode &
+        Szokásos nagyságrendi osztályok: konstans, logaritmikus, lineáris, $\mathcal{O}(n \log n)$, négyzetes, köbös, exponenciális stb.
+        % Standard complexity classes: constant, logarithmic, linear, $\mathcal{O}(n \log n)$, quadratic, cubic, exponential, etc.
+        \\ \hline
 
-    \begin{myitemize}
-    \Inofocus \CC{Identifying differences among best, average, and worst case behaviors},
-    \Inofocus \CC{Little o, Omega, and Theta notation},
-    \Inofocus Tuning parameters to reduce running time, memory consumption or other measures of performance
-    \end{myitemize}
-  
-    \begin{myitemize}
-    \Iexcluded Asymptotic analysis of average complexity bounds
-    \Iexcluded Using recurrence relations to analyze recursive algorithms
-    \end{myitemize}
-  
-    %}}}
-    \subsubsection*{AL2. Algorithmic strategies}%{{{
+        \ccode & \ccode & \ccode &
+        Algoritmusok idő- és tárigényének optimalizálása 
+        % Time and space tradeoffs in algorithms
+        \\ \hline
+        
+        \ccode & \ccode & \ccode &
+        Hatékonyság mérése empirikusan
+        % Empirical performance measurements.
+        \\ \hline
 
-    \begin{myitemize}
-    \Icodeonly Simple loop design strategies
-    \Icodeonly\CC{Brute-force algorithms} (exhaustive search)
-    \Icodeonly\CC{Greedy algorithms}
-    \Icodeonly\CC{Divide-and-conquer}
-    \Icodeonly\CC{Backtracking} (recursive and non-recursive), \CC{Branch-and-bound}
-    \Icodeonly\CC{Dynamic programming}\footnote{The IEEE-CS Curriculum puts this under AL8, but we believe it belongs here.} 
-    \end{myitemize}
+        \cnfoc & \cnfoc & \cnfoc &
+        kis ordó, omega és theta jelölések
+        % Little o, Omega, and Theta notation
+        \\ \hline
+
+        \cnfoc & \cnfoc & \cnfoc &
+        Paraméterek hangolása a futási idő vagy memória csökkentése érdekében.
+        % Tuning parameters to reduce running time, memory consumption or other measures of performance
+        \\ \hline
+        
+        \cexcl & \cexcl & \cexcl &
+        Átlagos komplexitásra aszimptotikus becslések
+        % Asymptotic analysis of average complexity bounds
+        \\ \hline
+
+        \cexcl & \cexcl & \cexcl &
+        Rekurziós összefüggések használata komplexitás elemzéskor
+        % Using recurrence relations to analyze recursive algorithms
+        \\ \hline
+    }
   
-    \begin{myitemize}
-    \Inofocus Heuristics
-    \Inofocus Finding good features for machine learning tasks\footnote{E.g., finding a good way to classify images in the IOI 2013 Art class problem.}
-    \Inofocus Discrete approximation algorithms
-    \Inofocus Randomized algorithms.
-    \end{myitemize}
+    \subsubsection*{AL2. Algoritmikus stratégiák} % AL2. Algorithmic strategies
+
+    \ctable {
+        \ccode & \ccode & \ccode &
+        Egyszerű ciklustervezéses stratégiák
+        % Simple loop design strategies
+        \\ \hline
+
+        \ccode & \ccode & \ccode &
+        Kimerítő keresés (brute force)
+        % Brute-force algorithms (exhaustive search)
+        \\ \hline
+
+        \ccode & \ccode & \ccode &
+        Mohó algoritmusok
+        % Greedy algorithms
+        \\ \hline
+
+        \ccode & \ccode & \ccode &
+        Dinamikus programozás
+        % Dynamic programming
+        \\ \hline
+
+        \ccode & \ccode & \ccode &
+        Rekurzív kiszámítás
+        \\ \hline
+
+        \ccode & \ccode & \ccode &
+        Két mutató (2 pointers) technika
+        \\ \hline
+        
+        \cemay & \ccode & \ccode &
+        Bináris keresés
+        \\ \hline
+
+        \cemay & \ccode & \ccode &
+        Visszalépéses keresés (backtrack, rekurzív és nem rekurzív is)
+        % Backtracking (recursive and non-recursive), 
+        \\ \hline
+        
+        \cexcl & \ccode & \ccode &
+        Elágazás és korlátozás
+        % Branch-and-bound
+        \\ \hline
+        
+        \cexcl & \ccode & \ccode &
+        Oszd meg és uralkodj elv
+        % Divide-and-conquer
+        \\ \hline        
+    
+        \cnfoc & \cnfoc & \cnfoc &
+        Heurisztikák
+        % Heuristics
+        \\ \hline
+
+        \cnfoc & \cnfoc & \cnfoc &
+        Közelítő algoritmusok
+        % Discrete approximation algorithms
+        \\ \hline
+
+        \cnfoc & \cnfoc & \cnfoc &
+        Randomizált algoritmusok
+        % Randomized algorithms.
+        \\ \hline
+        
+        \cexcl & \cexcl & \cexcl &
+        Klaszterező algoritmusok (pl. $k$-means)
+        % Clustering algorithms (e.g. $k$-means, $k$-nearest neighbor)
+        \\ \hline
+
+        \cexcl & \cexcl & \cexcl &
+        Többváltozós függvények szélsőérték keresése numerikus módszerekkel
+        %Minimizing multi-variate functions using numerical approaches.
+        \\ \hline
+    }
   
-    \begin{myitemize}
-    \Iexcluded Clustering algorithms (e.g. $k$-means, $k$-nearest neighbor)
-    \Iexcluded Minimizing multi-variate functions using numerical approaches.
-    \end{myitemize}
-  
-    %}}}
     \subsubsection*{AL3a. Algorithms}%{{{
 
     \begin{myitemize}
