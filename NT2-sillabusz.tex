@@ -31,19 +31,19 @@
 %\newcommand{\CC}[1]{\textsf{\small #1}}% to quote from Computing Curricula 2001
 \newcommand{\CC}[1]{#1}
 
-\newcommand{\Cincluded}{{\small\cmark}}
-\newcommand{\Cdefine}{{\small\cmark\faFileTextO}}
-\newcommand{\Ccodeonly}{{\small\cmark\faFileText}}
-\newcommand{\Cnofocus}{{\small\faQuestion}}
-\newcommand{\Cexmaybe}{{\small\xmark\faQuestionCircle}}
-\newcommand{\Cexcluded}{{\small\xmark}}
+\newcommand{\cincl}{{\small\cmark}}
+\newcommand{\cdef}{{\small\cmark\faFileTextO}}
+\newcommand{\ccode}{{\small\cmark\faFileText}}
+\newcommand{\cnfoc}{{\small\faQuestion}}
+\newcommand{\cemay}{{\small\xmark\faQuestionCircle}}
+\newcommand{\cexcl}{{\small\xmark}}
 
-\newcommand{\Iincluded}{\item[\hbox to 1.8em{\Cincluded\hfill}]}
-\newcommand{\Idefine}{\item[\hbox to 1.8em{\Cdefine\hfill}]}
-\newcommand{\Icodeonly}{\item[\hbox to 1.8em{\Ccodeonly\hfill}]}
-\newcommand{\Inofocus}{\item[\hbox to 1.8em{\Cnofocus\hfill}]}
-\newcommand{\Iexmaybe}{\item[\hbox to 1.8em{\Cexmaybe\hfill}]}
-\newcommand{\Iexcluded}{\item[\hbox to 1.8em{\Cexcluded\hfill}]}
+\newcommand{\Iincluded}{\item[\hbox to 1.8em{\cincl\hfill}]}
+\newcommand{\Idefine}{\item[\hbox to 1.8em{\cdef\hfill}]}
+\newcommand{\Icodeonly}{\item[\hbox to 1.8em{\ccode\hfill}]}
+\newcommand{\Inofocus}{\item[\hbox to 1.8em{\cnfoc\hfill}]}
+\newcommand{\Iexmaybe}{\item[\hbox to 1.8em{\cemay\hfill}]}
+\newcommand{\Iexcluded}{\item[\hbox to 1.8em{\cexcl\hfill}]}
 
 \newcolumntype{C}{ >{\centering\arraybackslash} m{1.2cm} }
 \newcommand{\Ctable}[1]{
@@ -186,24 +186,24 @@ current Syllabus maintainer.
 Here are the definitions of the six possible classifications:
 
 \begin{description}
-\item[\Cincluded\ Included, unlimited]~\\
+\item[\cincl\ Included, unlimited]~\\
     Topics in this category are considered to be prerequisite knowledge.
     Contestants are expected to know them. These topics can appear
     in task descriptions without further clarification.
 
     Example: \emph{Integer} in~\S\ref{subsubsec:NG}
 
-\item[\Cdefine\ Included, to be defined]~\\
+\item[\cdef\ Included, to be defined]~\\
     Contestants should know this topic,
     but when it appears in a task description,
     the statement should contain a sufficient definition.
     This category is usually applied in situations where a general
-    concept that would be \Cincluded\ has many different ``flavors'' and a formal definition
+    concept that would be \cincl\ has many different ``flavors'' and a formal definition
     is needed to distinguish among those.
 
     Example: \emph{Directed graph} in~\S\ref{subsubsec:DS}~DS2
 
-\item[\Ccodeonly\ Included, not for task description]~\\
+\item[\ccode\ Included, not for task description]~\\
     Topics that belong to this category should not appear in tasks 
     descriptions. However, developing solutions and understanding 
     model solutions may require the knowledge of these topics.
@@ -219,7 +219,7 @@ Here are the definitions of the six possible classifications:
     the gold medallists. It is \textbf{not} expected that all contestants
     should know everything listed in this category.
 
-\item[\Cnofocus\ Outside of focus]~\\
+\item[\cnfoc\ Outside of focus]~\\
     Any topic that is not explicitly addressed by the Syllabus
     should be considered to belong to this category.
 
@@ -236,7 +236,7 @@ Here are the definitions of the six possible classifications:
     the ISC will make sure that the task can reasonably be solved
     without prior knowledge of the particular topic, and that 
     the task can be stated
-    in terms of \Cincluded\ and \Cdefine\ concepts in a precise, concise, 
+    in terms of \cincl\ and \cdef\ concepts in a precise, concise, 
     and clear way.
 
     Examples of such tasks being used at recent IOIs include:
@@ -248,7 +248,7 @@ Here are the definitions of the six possible classifications:
     \end{itemize}
 
 
-\item[\Cexcluded\ Explicitly excluded]~\\
+\item[\cexcl\ Explicitly excluded]~\\
     Some of the harder algorithmic topics are explicitly marked as excluded.
     It is guaranteed that there will not be a competition
     task that \emph{requires} the contestants to know these areas.
@@ -268,7 +268,7 @@ Here are the definitions of the six possible classifications:
     
     Examples: \emph{Calculus\/} in~\S\ref{subsubsec:other-mathematics}
 
-\item[\Cexmaybe\ Excluded, but open to discussion]~\\
+\item[\cemay\ Excluded, but open to discussion]~\\
     As the Syllabus is a living document, there can be cases when we consider
     bringing in some of the Excluded topics. Usually, the topics in question
     are natural extensions of Included topics, or ones where drawing an exact
@@ -293,27 +293,27 @@ The rest of this document contains the classification of topics.
     \subsubsection*{PA1. Alapvető programozási eszközök} % {PF1. Fundamental programming constructs}
 
     \Ctable {
-        \Cincluded & \Cincluded & \Cincluded &
+        \cincl & \cincl & \cincl &
         Alapvető szintaxisa és szemantikája egy versenyen megengedett programozási nyelvnek \\ \hline
         % Basic syntax and semantics of a higher-level language
         
-        \Cincluded & \Cincluded & \Cincluded &
+        \cincl & \cincl & \cincl &
         Változók, típusok, műveletek, kifejezések és értékadás \\ \hline
         % Variables, types, expressions, and assignment
         
-        \Cincluded & \Cincluded & \Cincluded &
+        \cincl & \cincl & \cincl &
         Elágazások és ciklusok \\ \hline
         % Conditional and iterative control structures
         
-        \Cincluded & \Cincluded & \Cincluded &
+        \cincl & \cincl & \cincl &
         Függvények és paraméterátadás \\ \hline
         % Functions and parameter passing
         
-        \Cincluded & \Cincluded & \Cincluded &
+        \cincl & \cincl & \cincl &
         Egyszerű beolvasás és kiírás (A standard input/output ismerete kell.) \\ \hline
         % Simple I/O
         
-        \Cexmaybe & \Cexmaybe & \Cexmaybe &
+        \cemay & \cemay & \cemay &
         Fájlba írás és olvasás \\ \hline
     }
 
@@ -488,14 +488,14 @@ The rest of this document contains the classification of topics.
     \subsubsection*{AL4. Distributed algorithms}%{{{
 
     \begin{quote}
-    This entire section is \Cnofocus.
+    This entire section is \cnfoc.
     \end{quote}
 
     %}}}
     \subsubsection*{AL5. Basic computability}%{{{
 
     \begin{quote}
-    All topics related to computability are \Cexcluded.
+    All topics related to computability are \cexcl.
     This includes the following:
     \CC{Tractable and intractable problems};
     \CC{Uncomputable functions};
@@ -510,12 +510,12 @@ The rest of this document contains the classification of topics.
 
     \begin{quote}
     Topics related to non-determinism, proofs of NP-hardness (reductions),
-    and everything related is \Cexcluded.
+    and everything related is \cexcl.
 
     Note that this section only covers the results usually contained in
     undergraduate and graduate courses on formal languages and 
     computational complexity. The classification of these topics
-    as \Cexcluded\ does not mean that an NP-hard 
+    as \cexcl\ does not mean that an NP-hard 
     problem cannot appear at an IOI.
     \end{quote}
 
@@ -556,7 +556,7 @@ The rest of this document contains the classification of topics.
     \subsubsection*{AL9. Cryptographic algorithms}%{{{
 
     \begin{quote}
-    This entire section is \Cnofocus.
+    This entire section is \cnfoc.
     \end{quote}
 
     %}}}
@@ -594,7 +594,7 @@ The rest of this document contains the classification of topics.
     \subsubsection*{AL11. Parallel algorithms}%{{{
 
     \begin{quote}
-    This entire section is \Cnofocus.
+    This entire section is \cnfoc.
     \end{quote}
 
     %}}}
@@ -727,8 +727,8 @@ The rest of this document contains the classification of topics.
   
         \begin{quote}
         Applications where everything is finite (and thus arguments about probability can be easily
-        turned into combinatorial arguments) are \Cnofocus, everything more complicated
-        is \Cexcluded.
+        turned into combinatorial arguments) are \cnfoc, everything more complicated
+        is \cexcl.
         \end{quote}
 
 %}}}
