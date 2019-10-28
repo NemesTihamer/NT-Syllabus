@@ -5,6 +5,7 @@
 \usepackage{url}
 \usepackage{sectsty}
 \usepackage{enumitem}
+\usepackage{array}
 \usepackage{amsfonts}
 \usepackage{pifont}
 \usepackage{fontawesome}
@@ -44,24 +45,36 @@
 \newcommand{\Iexmaybe}{\item[\hbox to 1.8em{\Cexmaybe\hfill}]}
 \newcommand{\Iexcluded}{\item[\hbox to 1.8em{\Cexcluded\hfill}]}
 
+\newcolumntype{C}{ >{\centering\arraybackslash} m{1.2cm} }
+\newcommand{\Ctable}[1]{
+    \begin{center}
+        \begin{tabular}{ | C | C | C | m{8cm} |}
+        \hline
+        NT1 & NT2 & OKTV & Leírás \\ \hline
+        #1
+        \end{tabular}
+    \end{center}    
+}
+
 \newcommand{\DRAFT}{ -- Piszkozat 2020/21-re}
 \pagestyle{myheadings}
+% TODO: Legyen szélesebb a szöveg
 \textwidth 126.34 mm
 \textheight 189.55 mm
 \parindent 20 pt
 \parskip 0 pt
-\markboth{\sc Nemes Tihamér 2 Sillabusz\DRAFT}{\sc Nemes Tihamér 2 Sillabusz\DRAFT}
+\markboth{\sc Nemes Tihamér Sillabusz\DRAFT}{\sc Nemes Tihamér Sillabusz\DRAFT}
 
 \newenvironment{myitemize}{\begin{quote}\begin{itemize}\itemsep 0pt}{\end{itemize}\end{quote}}
 
 \newcommand{\remove}[1]{\sout{#1}}
 \newcommand{\new}[1]{{\bf \color{red}{#1}}}
-\newcommand{\richard}[1]{}
+%\newcommand{\richard}[1]{}
 
 
 \begin{document}
-\title{\sf Nemes Tihamér 2 Sillabusz \\
-    \large A Nemes Tihamér NITV Programozás kategória, 2. korcsoport anyagának kivonata}
+\title{\sf Nemes Tihamér Sillabusz \\
+    \large A Nemes Tihamér NITV Programozás kategória anyagának kivonata}
 \author{}
 \date{~}
 \maketitle
@@ -69,8 +82,7 @@
 \section{Verzió és státusz}%{{{
 
 Ez egy nem hivatalos javaslat a 2020/2021. tanévi Nemes Tihamér NITV Programozás kategória
-2. korcsoportjának (9-10. osztályosok) második és harmadik fordulójában szereplő feladatok
-témaköreinek leírására.
+második és harmadik fordulójában szereplő feladatok témaköreinek leírására.
 
 \medskip
 
@@ -100,9 +112,12 @@ Minden javaslatot, hozzászólást és segítséget szívesen fogadunk.
 
 Az IOI Syllabus-hoz képest az NT Sillabusz erősen rövidített az áttekinthetőség kedvéért.
 A konkrét tárgyi ismereteket és módszereket soroljuk fel, míg a készségekről (például hibakeresés)
-és eszközök használatáról (például fejlesztőkörnyezet) nem teszünk említést. \textbf{Ez a dokumentum kifejezetten
-a 2. és 3. forduló (gépes) feladatairól szól}. Az első fordulóban szélesebb körből fordulhatnak elő feladatok,
-mert ott elvárt egy-egy (esetleg ismeretlen) számítástechnikai témakör alapszintű megértése a feladatleírás alapján.
+és eszközök használatáról (például fejlesztőkörnyezet) nem teszünk említést.
+
+\textbf{Ez a dokumentum kifejezetten a 2. és 3. forduló (gépes) feladatairól szól}.
+Az első fordulóban szélesebb körből fordulhatnak elő feladatok, mert ott elvárt egy-egy
+(esetleg ismeretlen) számítástechnikai témakör alapszintű megértése a feladatleírás alapján.
+
 A Sillabusz az alábbi célokat szolgálja.
 
 \begin{itemize}
@@ -277,15 +292,30 @@ The rest of this document contains the classification of topics.
 
     \subsubsection*{PA1. Alapvető programozási eszközök} % {PF1. Fundamental programming constructs}
 
-    \begin{myitemize}
-    \Iincluded\CC{Alapvető szintaxisa és szemantikája egy versenyen megengedett programozási nyelvnek} % {Basic syntax and semantics of a higher-level language} 
-    \Iincluded\CC{Változók, típusok, műveletek, kifejezések és értékadás} % {Variables, types, expressions, and assignment}
-    \Iincluded\CC{Egyszerű beolvasás és kiírás} (A standard input/output ismerete kell.) % {Simple I/O}
-    \Iexmaybe \CC{Fájlba írás és olvasás}
-    \Iincluded\CC{Elágazások és ciklusok}  % {Conditional and iterative control structures}
-    \Iincluded\CC{Függvények és paraméterátadás} % {Functions and parameter passing}
-    \end{myitemize}
-
+    \Ctable {
+        \Cincluded & \Cincluded & \Cincluded &
+        Alapvető szintaxisa és szemantikája egy versenyen megengedett programozási nyelvnek \\ \hline
+        % Basic syntax and semantics of a higher-level language
+        
+        \Cincluded & \Cincluded & \Cincluded &
+        Változók, típusok, műveletek, kifejezések és értékadás \\ \hline
+        % Variables, types, expressions, and assignment
+        
+        \Cincluded & \Cincluded & \Cincluded &
+        Elágazások és ciklusok \\ \hline
+        % Conditional and iterative control structures
+        
+        \Cincluded & \Cincluded & \Cincluded &
+        Függvények és paraméterátadás \\ \hline
+        % Functions and parameter passing
+        
+        \Cincluded & \Cincluded & \Cincluded &
+        Egyszerű beolvasás és kiírás (A standard input/output ismerete kell.) \\ \hline
+        % Simple I/O
+        
+        \Cexmaybe & \Cexmaybe & \Cexmaybe &
+        Fájlba írás és olvasás \\ \hline
+    }
 
 
     \subsubsection*{PA2. Alapvető adatszerkezetek} % {PF3. Fundamental data structures}
