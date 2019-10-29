@@ -422,7 +422,7 @@ The rest of this document contains the classification of topics.
     \\ \hline %Minimizing multi-variate functions using numerical approaches.
 }
 
-\subsubsection*{AL3a. Algoritmusok} % Algorithms
+\subsubsection*{AL3. Algoritmusok} % AL3a. Algorithms
 
 \ctable {
     \ccode & \ccode & \ccode & Egyszerű számelméleti algoritmusok: számrendszer átváltás, Euklideszi algoritmus (LNKO-ra),
@@ -486,40 +486,60 @@ The rest of this document contains the classification of topics.
     \\ \hline % optimization problems that are easiest to analyze using matroid theory. Problems based on matroid intersecions (except for bipartite matching).
     \cexcl & \cexcl & \cexcl & Lexikografikus szélességi bejárás, maximum adjacency search % TODO: mi ez magyarul, egyáltalán kell-e ?
     \\ \hline % Lexicographical BFS, maximum adjacency search and their properties
+    \cexcl & \cexcl & \cemay & Haladó string algoritmusok: KMP, Z-algoritmus
+    \\ \hline % AL3b. String algorithms and data structures: there is evidence that the inter-reducibility between KMP, Rabin-Karp hashing, suffix arrays/tree, suffix automaton, and Aho-Corasick makes them difficult to separate. 
 }
 
-    \subsubsection*{AL3b. Data structures}%{{{
-  
-    \begin{myitemize}
-    \Idefine Stacks and queues
-    \Icodeonly \CC{Representations of graphs (adjacency lists, adjacency matrix)}
-    \Idefine Binary heap data structures
-    \Icodeonly Representation of disjoint sets: the Union-Find data structure.
-    \Idefine Statically balanced binary search trees. Instances of this include binary index trees (also known as Fenwick trees)
-    and segment trees (also known as interval trees and tournament trees).\footnote{Not to be confused with similarly-named data structures used in computational geometry.}
-    \Icodeonly {Balanced binary search trees}\footnote{Problems will not be designed to distinguish between
-    the implementation of BBSTs, such as treaps, splay trees, AVL trees, or scapegoat trees}
-    \Idefine Augmented binary search trees
-    \Icodeonly $O(\log n)$ time algorithms for answering lowest common ancestor queries in a static rooted tree.\footnote{Once again, different implementations meeting this requirement will not be distinguished.}
-    \Icodeonly Creating persistent data structures by path copying.%\footnote{Gains in memory using methods such as fat-node will not be distinguished}}
-    \Icodeonly Nesting of data structures, such as having a sequence of sets.
-    \Idefine Tries
-    \end{myitemize}
+\subsubsection*{AL4. Adatszerkezetek (összetett adatszerkezetek)} % AL3b. Data structures
 
-    \begin{myitemize}
-    \Iexmaybe String algorithms and data structures: there is evidence that the inter-reducibility between KMP, Rabin-Karp hashing, suffix arrays/tree, suffix automaton, and Aho-Corasick makes them difficult to separate.
-    \Iexmaybe Heavy-light decomposition and separator structures for static trees.
-    \Iexmaybe Data structures for dynamically changing trees and their use in graph algorithms.
-    \end{myitemize}
+\ctable {
+    \ccode & \cdefi & \cincl & Verem és sor
+    \\ \hline % Stacks and queues
+    \ccode & \cdefi & \cincl & Prefix összeg (kumulatív összeg)
+    \\ \hline % Al3a. prefix sums
+    \cemay & \cdefi & \cincl & Gráfreprezentációk: mátrix, szomszédsági lista, éllista
+    \\ \hline % Representations of graphs (adjacency lists, adjacency matrix
+    \cexcl & \ccode & \cincl & Unió-holvan (DSU)
+    \\ \hline % Representation of disjoint sets: the Union-Find data structure.
+    \cexcl & \cdefi & \cdefi & Kupac és hasonló bináris fa reprezentációk
+    \\ \hline % Binary heap data structures
+    \cexcl & \cdefi & \cincl & Prioritási sor használata (kupac ismerete nélkül)
+    \\ \hline 
+    \cexcl & \ccode & \ccode & Beépített set és map használata
+    \\ \hline 
+    \cexcl & \cexcl & \cemay & Szegmensfa, Fenwick-fa, és hasonló statikusan kiegyensúlyozott bináris keresőfák
+    \\ \hline % Statically balanced binary search trees. Instances of this include binary index trees (also known as Fenwick trees)
+        % and segment trees (also known as interval trees and tournament trees).
+        % \footnote{Not to be confused with similarly-named data structures used in computational geometry.}
+    \cexcl & \cexcl & \cexcl & Kiegyensúlyozott bináris keresőfák (pl. AVL-fa, piros-fekete fa stb.)
+        \footnote{Ugyan nem kell ismerni ezeket az adatszerkezeteket, de az erre épülő sztenderd tárolók (set, map) használata szükséges lehet.}
+    \\ \hline % {Balanced binary search trees} \footnote{Problems will not be designed to distinguish between
+        % the implementation of BBSTs, such as treaps, splay trees, AVL trees, or scapegoat trees}
+    % TODO: Augmented binary search trees - ez mi???
+    \cexcl & \cexcl & \cemay & LCA (legalacsonyabb közös ős fában) meghatározása $O(\log n)$ időben.
+    \\ \hline % $O(\log n)$ time algorithms for answering lowest common ancestor queries in a static rooted tree.
+        % \footnote{Once again, different implementations meeting this requirement will not be distinguished.}
+    \cexcl & \cemay & \ccode & Adatszerkezetek egymásba ágyazása (például halmazok halmaza).
+    \\ \hline % Nesting of data structures, such as having a sequence of sets.
+    \cexcl & \cexcl & \cdefi & Szófa (trie)
+    \\ \hline % Tries
+    \cexcl & \cexcl & \cexcl & Összetett string adatszerkezetek (suffix arrays/tree, suffix automaton, Rabin-Karp hashing)
+    \\ \hline % String algorithms and data structures: there is evidence that the inter-reducibility between KMP, Rabin-Karp hashing, suffix arrays/tree, suffix automaton, and Aho-Corasick makes them difficult to separate.
+    \cexcl & \cexcl & \cexcl & Perzisztens adatszerkezetek (például perzisztens szegmensfa) % TODO: tényleg ezt jelenti az alábbi ??
+    \\ \hline % Creating persistent data structures by path copying.
+    \cexcl & \cexcl & \cexcl & Heavy-light decomposition
+    \\ \hline % Heavy-light decomposition and separator structures for static trees.
+    \cexcl & \cexcl & \cexcl & Dinamikusan változó fákhoz fejlett adatszerkezetek
+    \\ \hline % Data structures for dynamically changing trees and their use in graph algorithms.
+    \cexcl & \cexcl & \cexcl & Bonyolult kupac-variációk (Fibonacci, binomiális)
+    \\ \hline % Complex heap variants such as binomial and Fibonacci heaps,
+    \cexcl & \cexcl & \cexcl & Hash-táblák implementálása, illetve használata
+        \footnote{Természetesen lehet használni a beépített implementációkat, de nem lehet olyan feladat, ami enélkül nem oldható meg.}
+    \\ \hline % Using and implementing \CC{hash tables} (incl. strategies to resolve collisions)
+    \cexcl & \cexcl & \cexcl & Két dimenziós fa alapú adatszerkezetek (pl. 2D Fenwick-fa)
+    \\ \hline % Two-dimensional tree-like data structures (such as a 2D statically balanced binary tree or a treap of treaps) used for 2D queries.
+}
 
-    \begin{myitemize}
-    \Iexcluded Complex heap variants such as binomial and Fibonacci heaps,
-    \Iexcluded Using and implementing \CC{hash tables} (incl. strategies to resolve collisions)
-    \Iexcluded Two-dimensional tree-like data structures (such as a 2D statically balanced binary tree or a treap of treaps) used for 2D queries.
-    \Iexcluded Fat nodes and other more complicated ways of implementing persistent data structures.
-    \end{myitemize}
-
-    %}}}
     \subsubsection*{AL4. Distributed algorithms}%{{{
 
     \begin{quote}
