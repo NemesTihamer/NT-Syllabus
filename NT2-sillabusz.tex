@@ -33,14 +33,14 @@
 \newcommand{\CC}[1]{#1}
 
 \newcommand{\cincl}{{\small\cmark}}
-\newcommand{\cdef}{{\small\cmark\faFileTextO}}
+\newcommand{\cdefi}{{\small\cmark\faFileTextO}}
 \newcommand{\ccode}{{\small\cmark\faFileText}}
 \newcommand{\cnfoc}{{\small\faQuestion}}
 \newcommand{\cemay}{{\small\xmark\faQuestionCircle}}
 \newcommand{\cexcl}{{\small\xmark}}
 
 \newcommand{\Iincluded}{\item[\hbox to 1.8em{\cincl\hfill}]}
-\newcommand{\Idefine}{\item[\hbox to 1.8em{\cdef\hfill}]}
+\newcommand{\Idefine}{\item[\hbox to 1.8em{\cdefi\hfill}]}
 \newcommand{\Icodeonly}{\item[\hbox to 1.8em{\ccode\hfill}]}
 \newcommand{\Inofocus}{\item[\hbox to 1.8em{\cnfoc\hfill}]}
 \newcommand{\Iexmaybe}{\item[\hbox to 1.8em{\cemay\hfill}]}
@@ -55,7 +55,7 @@
         \endhead
         #1
         \end{longtable}
-    \end{center}    
+    \end{center}
 }
 
 \newcommand{\DRAFT}{ -- Piszkozat 2020/21-re}
@@ -195,7 +195,7 @@ Here are the definitions of the six possible classifications:
 
     Example: \emph{Integer} in~\S\ref{subsubsec:NG}
 
-\item[\cdef\ Included, to be defined]~\\
+\item[\cdefi\ Included, to be defined]~\\
     Contestants should know this topic,
     but when it appears in a task description,
     the statement should contain a sufficient definition.
@@ -238,7 +238,7 @@ Here are the definitions of the six possible classifications:
     the ISC will make sure that the task can reasonably be solved
     without prior knowledge of the particular topic, and that 
     the task can be stated
-    in terms of \cincl\ and \cdef\ concepts in a precise, concise, 
+    in terms of \cincl\ and \cdefi\ concepts in a precise, concise, 
     and clear way.
 
     Examples of such tasks being used at recent IOIs include:
@@ -292,269 +292,134 @@ The rest of this document contains the classification of topics.
 \subsection {Progamozási Alapok (PA)} %{Programming Fundamentals (PF)}
 \label{subsubsec:PF}
 
-    \subsubsection*{PA1. Alapvető programozási eszközök} % {PF1. Fundamental programming constructs}
+\subsubsection*{PA1. Alapvető programozási eszközök} % {PF1. Fundamental programming constructs}
 
-    \ctable {
-        \cincl & \cincl & \cincl &
-        Alapvető szintaxisa és szemantikája egy versenyen megengedett programozási nyelvnek 
-        % Basic syntax and semantics of a higher-level language
-        \\ \hline
-        
-        \cincl & \cincl & \cincl &
-        Változók, típusok, műveletek, kifejezések és értékadás
-        % Variables, types, expressions, and assignment
-        \\ \hline
-        
-        \cincl & \cincl & \cincl &
-        Elágazások és ciklusok
-        % Conditional and iterative control structures
-        \\ \hline
-        
-        \cincl & \cincl & \cincl &
-        Függvények és paraméterátadás 
-        % Functions and parameter passing
-        \\ \hline
-        
-        \cincl & \cincl & \cincl &
-        Egyszerű beolvasás és kiírás (A standard input/output ismerete kell.) 
-        % Simple I/O
-        \\ \hline
-        
-        \cemay & \cemay & \cemay &
-        Fájlba írás és olvasás
-        \\ \hline
-    }
+\ctable {
+    \cincl & \cincl & \cincl & Alapvető szintaxisa és szemantikája egy versenyen megengedett programozási nyelvnek
+    \\ \hline % Basic syntax and semantics of a higher-level language
+    \cincl & \cincl & \cincl & Változók, típusok, műveletek, kifejezések és értékadás
+    \\ \hline % Variables, types, expressions, and assignment
+    \cincl & \cincl & \cincl & Elágazások és ciklusok
+    \\ \hline % Conditional and iterative control structures
+    \cincl & \cincl & \cincl & Függvények és paraméterátadás
+    \\ \hline % Functions and parameter passing
+    \cincl & \cincl & \cincl & Egyszerű beolvasás és kiírás (A standard input/output ismerete kell.)
+    \\ \hline % Simple I/O
+    \cemay & \cemay & \cemay & Fájlba írás és olvasás
+    \\ \hline
+}
 
 
-    \subsubsection*{PA2. Alapvető adatszerkezetek} % {PF3. Fundamental data structures}
+\subsubsection*{PA2. Alapvető adatszerkezetek} % {PF3. Fundamental data structures}
 
-    \ctable {
-        
-        \cincl & \cincl & \cincl &
-        Elemi adattípusok (logikai, egész, karakter) 
-        % Primitive types (boolean, signed/unsigned integer, character)
-        \\ \hline
-        
-        \cincl & \cincl & \cincl &
-        Tömbök 
-        % Arrays (incl. multicolumn dimensional arrays)
-        \\ \hline
-
-        \cincl & \cincl & \cincl &
-        Két vagy több dimenziós tömbök
-        \\ \hline
-        
-        \cincl & \cincl & \cincl &
-        Karekterláncok (string) és feldolgozásuk 
-        % Strings and string processing
-        \\ \hline
-        
-        \ccode & \ccode & \ccode &
-        Valós számok használata egyszerű és numerikusan stabil számításokra 
-        % Elementary use of real numbers in numerically stable tasks
-        \\ \hline
-        
-        \ccode & \ccode & \ccode & 
-        A valós számok lebegőpontos reprezentációja, pontossági hibák léte.
+\ctable {
+    \cincl & \cincl & \cincl & Elemi adattípusok (logikai, egész, karakter)
+    \\ \hline % Primitive types (boolean, signed/unsigned integer, character)
+    \cincl & \cincl & \cincl & Tömbök
+    \\ \hline % Arrays (incl. multicolumn dimensional arrays)
+    \cincl & \cincl & \cincl & Két vagy több dimenziós tömbök
+    \\ \hline
+    \cincl & \cincl & \cincl & Karekterláncok (string) és feldolgozásuk
+    \\ \hline % Strings and string processing
+    \ccode & \ccode & \ccode & Valós számok használata egyszerű és numerikusan stabil számításokra
+    \\ \hline % Elementary use of real numbers in numerically stable tasks
+    \ccode & \ccode & \ccode & A valós számok lebegőpontos reprezentációja, pontossági hibák léte.
         \footnote{Amikor csak lehetséges, a lebegőpontos számítások teljes elkerülése az előnyösebb megoldás.} % TODO: footnote nincs sehol.
-        % \Icodeonly The floating-point representation of real numbers, the existence of precision issues.
+    \\ \hline % \Icodeonly The floating-point representation of real numbers, the existence of precision issues.
         % \footnote{Whenever possible, avoiding floating point computations completely is the preferred solution.}
-        \\ \hline
-        
-        \cemay & \ccode & \cincl &
-        Mutatók (pointer) és referenciák
-        % Pointers and references
-        \\ \hline
-        
-        \cexcl & \cemay & \cincl &
-        Láncolt adatszerkezetek
-        % Linked structures 
-        \\ \hline
-        
-        \cemay & \cemay & \ccode &
-        Törtszámok használata pontos számításokra
-        % \Inofocus Using fractions to perform exact calculations.
-        \\ \hline
-        
-        \cnfoc & \cnfoc & \cnfoc &
-        Adatok memóriaképe
-        % Data representation in memory
-        \\ \hline
-        
-        \cnfoc & \cnfoc & \cnfoc &
-        Dinamikus memóriafoglalás
-        % {Heap allocation}
-        \\ \hline
+    \cemay & \ccode & \cincl & Mutatók (pointer) és referenciák
+    \\ \hline % Pointers and references
+    \cexcl & \cemay & \cincl & Láncolt adatszerkezetek
+    \\ \hline % Linked structures
+    \cemay & \cemay & \ccode & Törtszámok használata pontos számításokra
+    \\ \hline % \Inofocus Using fractions to perform exact calculations.
+    \cnfoc & \cnfoc & \cnfoc & Adatok memóriaképe
+    \\ \hline % Data representation in memory
+    \cnfoc & \cnfoc & \cnfoc & Dinamikus memóriafoglalás
+    \\ \hline % {Heap allocation}
+    \cexcl & \cexcl & \cexcl & Nemtriviális számítások lebegőpontos számokon, pontossági hibák kiküszöbölése
+    \\ \hline % Non-trivial calculations on floating point numbers, manipulating precision errors
+}
 
-        \cexcl & \cexcl & \cexcl &
-        Nemtriviális számítások lebegőpontos számokon, pontossági hibák kiküszöbölése
-        % Non-trivial calculations on floating point numbers, manipulating precision errors
-        \\ \hline
-    }
+\subsubsection*{PA3. Rekurzió} %{PF4. Recursion}
 
-    \subsubsection*{PA3. Rekurzió} %{PF4. Recursion}
-
-    \ctable {
-        \cincl & \cincl & \cincl &
-        A rekurzió fogalma
-        % The concept of recursion
-        \\ \hline
-
-        \ccode & \cincl & \cincl &
-        Rekurzív matematikai függvények
-        % Recursive mathematical functions
-        \\ \hline
-
-        \cincl & \cincl & \cincl &
-        Egyszerű rekurzív függvények (több függvény kölcsönös rekurziója is)
-        % Simple recursive procedures (incl. mutual recursion)
-        \\ \hline
-
-        \cemay & \ccode & \ccode &
-        A visszalépéses keresés rekurzív változata
-        % Recursive backtracking
-        \\ \hline
-
-        \cexcl & \cemay & \cincl &
-        Oszd meg és uralkodj stratégia
-        % Divide-and-conquer strategies
-        \\ \hline
-    }
+\ctable {
+    \cincl & \cincl & \cincl & A rekurzió fogalma
+    \\ \hline % The concept of recursion
+    \ccode & \cincl & \cincl & Rekurzív matematikai függvények
+    \\ \hline % Recursive mathematical functions
+    \cincl & \cincl & \cincl & Egyszerű rekurzív függvények (több függvény kölcsönös rekurziója is)
+    \\ \hline % Simple recursive procedures (incl. mutual recursion)
+    \cemay & \ccode & \ccode & A visszalépéses keresés rekurzív változata
+    \\ \hline % Recursive backtracking
+    \cexcl & \cemay & \cincl & Oszd meg és uralkodj stratégia
+    \\ \hline % Divide-and-conquer strategies
+}
 
 
 \subsection {Algoritmusok és komplexitásuk (AL)} % {Algorithms and Complexity (AL)}
 \label{subsubsec:AL}
 
-    \subsubsection*{AL1. Algoritmusok elemzése alapszinten} % Basic algorithmic analysis
+\subsubsection*{AL1. Algoritmusok elemzése alapszinten} % Basic algorithmic analysis
 
-    \ctable {
-        \cdef & \cdef & \cdef &
-        Algoritmus specifikáció, előfeltétel, utófeltétel, helyesség, invariánsok
-        % Algorithm specification, precondition, postcondition, correctness, invariants
-        \\ \hline
+\ctable {
+    \cdefi & \cdefi & \cdefi & Algoritmus specifikáció, előfeltétel, utófeltétel, helyesség, invariánsok
+    \\ \hline % Algorithm specification, precondition, postcondition, correctness, invariants
+    \ccode & \ccode & \ccode & Aszimptotikus felső becslés a komplexitásra (lehetőleg nem formálisan)
+    \\ \hline % Asymptotic analysis of upper complexity bounds (informally if possible)
+    \cexcl & \ccode & \cdefi & $\mathcal{O}$ (ordó) jelölés a komplexitásra
+    \\ \hline % Big O notation
+    \ccode & \ccode & \ccode & Szokásos nagyságrendi osztályok: konstans, logaritmikus, lineáris, $\mathcal{O}(n \log n)$, négyzetes, köbös, exponenciális stb.
+    \\ \hline % Standard complexity classes: constant, logarithmic, linear, $\mathcal{O}(n \log n)$, quadratic, cubic, exponential, etc.
+    \ccode & \ccode & \ccode & Algoritmusok idő- és tárigényének optimalizálása
+    \\ \hline % Time and space tradeoffs in algorithms
+    \ccode & \ccode & \ccode & Hatékonyság mérése empirikusan
+    \\ \hline % Empirical performance measurements.
+    \cnfoc & \cnfoc & \cnfoc & kis ordó, omega és theta jelölések
+    \\ \hline % Little o, Omega, and Theta notation
+    \cnfoc & \cnfoc & \cnfoc & Paraméterek hangolása a futási idő vagy memória csökkentése érdekében.
+    \\ \hline % Tuning parameters to reduce running time, memory consumption or other measures of performance
+    \cexcl & \cexcl & \cexcl & Átlagos komplexitásra aszimptotikus becslések
+    \\ \hline % Asymptotic analysis of average complexity bounds
+    \cexcl & \cexcl & \cexcl & Rekurziós összefüggések használata komplexitás elemzéskor
+    \\ \hline % Using recurrence relations to analyze recursive algorithms
+}
 
-        \ccode & \ccode & \ccode &
-        Aszimptotikus felső becslés a komplexitásra (lehetőleg nem formálisan)
-        % Asymptotic analysis of upper complexity bounds (informally if possible)
-        \\ \hline
-        
-        \cexcl & \ccode & \cdef &
-        $\mathcal{O}$ (ordó) jelölés a komplexitásra
-        % Big O notation
-        \\ \hline
+\subsubsection*{AL2. Algoritmikus stratégiák} % AL2. Algorithmic strategies
 
-        \ccode & \ccode & \ccode &
-        Szokásos nagyságrendi osztályok: konstans, logaritmikus, lineáris, $\mathcal{O}(n \log n)$, négyzetes, köbös, exponenciális stb.
-        % Standard complexity classes: constant, logarithmic, linear, $\mathcal{O}(n \log n)$, quadratic, cubic, exponential, etc.
-        \\ \hline
+\ctable {
+    \ccode & \ccode & \ccode & Egyszerű ciklustervezéses stratégiák
+    \\ \hline % Simple loop design strategies
+    \ccode & \ccode & \ccode & Kimerítő keresés (brute force)
+    \\ \hline % Brute-force algorithms (exhaustive search)
+    \ccode & \ccode & \ccode & Mohó algoritmusok
+    \\ \hline % Greedy algorithms
+    \ccode & \ccode & \ccode & Dinamikus programozás
+    \\ \hline % Dynamic programming
+    \ccode & \ccode & \ccode & Rekurzív kiszámítás
+    \\ \hline
+    \ccode & \ccode & \ccode & Két mutató (2 pointers) technika
+    \\ \hline
+    \cemay & \ccode & \ccode & Bináris keresés
+    \\ \hline
+    \cemay & \ccode & \ccode & Visszalépéses keresés (backtrack, rekurzív és nem rekurzív is)
+    \\ \hline % Backtracking (recursive and non-recursive),
+    \cexcl & \ccode & \ccode & Elágazás és korlátozás
+    \\ \hline % Branch-and-bound
+    \cexcl & \ccode & \ccode & Oszd meg és uralkodj elv
+    \\ \hline % Divide-and-conquer
+    \cnfoc & \cnfoc & \cnfoc & Heurisztikák
+    \\ \hline % Heuristics
+    \cnfoc & \cnfoc & \cnfoc & Közelítő algoritmusok
+    \\ \hline % Discrete approximation algorithms
+    \cnfoc & \cnfoc & \cnfoc & Randomizált algoritmusok
+    \\ \hline % Randomized algorithms.
+    \cexcl & \cexcl & \cexcl & Klaszterező algoritmusok (pl. $k$-means)
+    \\ \hline % Clustering algorithms (e.g. $k$-means, $k$-nearest neighbor)
+    \cexcl & \cexcl & \cexcl & Többváltozós függvények szélsőérték keresése numerikus módszerekkel
+    \\ \hline %Minimizing multi-variate functions using numerical approaches.
+}
 
-        \ccode & \ccode & \ccode &
-        Algoritmusok idő- és tárigényének optimalizálása 
-        % Time and space tradeoffs in algorithms
-        \\ \hline
-        
-        \ccode & \ccode & \ccode &
-        Hatékonyság mérése empirikusan
-        % Empirical performance measurements.
-        \\ \hline
-
-        \cnfoc & \cnfoc & \cnfoc &
-        kis ordó, omega és theta jelölések
-        % Little o, Omega, and Theta notation
-        \\ \hline
-
-        \cnfoc & \cnfoc & \cnfoc &
-        Paraméterek hangolása a futási idő vagy memória csökkentése érdekében.
-        % Tuning parameters to reduce running time, memory consumption or other measures of performance
-        \\ \hline
-        
-        \cexcl & \cexcl & \cexcl &
-        Átlagos komplexitásra aszimptotikus becslések
-        % Asymptotic analysis of average complexity bounds
-        \\ \hline
-
-        \cexcl & \cexcl & \cexcl &
-        Rekurziós összefüggések használata komplexitás elemzéskor
-        % Using recurrence relations to analyze recursive algorithms
-        \\ \hline
-    }
-  
-    \subsubsection*{AL2. Algoritmikus stratégiák} % AL2. Algorithmic strategies
-
-    \ctable {
-        \ccode & \ccode & \ccode &
-        Egyszerű ciklustervezéses stratégiák
-        % Simple loop design strategies
-        \\ \hline
-
-        \ccode & \ccode & \ccode &
-        Kimerítő keresés (brute force)
-        % Brute-force algorithms (exhaustive search)
-        \\ \hline
-
-        \ccode & \ccode & \ccode &
-        Mohó algoritmusok
-        % Greedy algorithms
-        \\ \hline
-
-        \ccode & \ccode & \ccode &
-        Dinamikus programozás
-        % Dynamic programming
-        \\ \hline
-
-        \ccode & \ccode & \ccode &
-        Rekurzív kiszámítás
-        \\ \hline
-
-        \ccode & \ccode & \ccode &
-        Két mutató (2 pointers) technika
-        \\ \hline
-        
-        \cemay & \ccode & \ccode &
-        Bináris keresés
-        \\ \hline
-
-        \cemay & \ccode & \ccode &
-        Visszalépéses keresés (backtrack, rekurzív és nem rekurzív is)
-        % Backtracking (recursive and non-recursive), 
-        \\ \hline
-        
-        \cexcl & \ccode & \ccode &
-        Elágazás és korlátozás
-        % Branch-and-bound
-        \\ \hline
-        
-        \cexcl & \ccode & \ccode &
-        Oszd meg és uralkodj elv
-        % Divide-and-conquer
-        \\ \hline        
-    
-        \cnfoc & \cnfoc & \cnfoc &
-        Heurisztikák
-        % Heuristics
-        \\ \hline
-
-        \cnfoc & \cnfoc & \cnfoc &
-        Közelítő algoritmusok
-        % Discrete approximation algorithms
-        \\ \hline
-
-        \cnfoc & \cnfoc & \cnfoc &
-        Randomizált algoritmusok
-        % Randomized algorithms.
-        \\ \hline
-        
-        \cexcl & \cexcl & \cexcl &
-        Klaszterező algoritmusok (pl. $k$-means)
-        % Clustering algorithms (e.g. $k$-means, $k$-nearest neighbor)
-        \\ \hline
-
-        \cexcl & \cexcl & \cexcl &
-        Többváltozós függvények szélsőérték keresése numerikus módszerekkel
-        %Minimizing multi-variate functions using numerical approaches.
-        \\ \hline
-    }
-  
     \subsubsection*{AL3a. Algorithms}%{{{
 
     \begin{myitemize}
