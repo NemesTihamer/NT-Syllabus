@@ -49,7 +49,7 @@
 \newcolumntype{C}{ >{\centering\arraybackslash} m{1.2cm} }
 \newcommand{\ctable}[1]{
     \begin{center}
-        \begin{longtable}{ | C | C | C | m{8cm} | }
+        \begin{longtable}{ | C | C | C | m{8cm} | } % TODO: utolsó oszlop ne legyen sorkizárt
         \hline
         \textbf{NT1} & \textbf{NT2} & \textbf{OKTV} & \multicolumn{1}{|c|}{\textbf{Leírás}} \\ \hline
         \endhead
@@ -373,9 +373,11 @@ The rest of this document contains the classification of topics.
     \\ \hline % Standard complexity classes: constant, logarithmic, linear, $\mathcal{O}(n \log n)$, quadratic, cubic, exponential, etc.
     \ccode & \ccode & \ccode & Algoritmusok idő- és tárigényének optimalizálása
     \\ \hline % Time and space tradeoffs in algorithms
+    \cexcl & \ccode & \ccode & Amortizált komplexitás elemzése
+    \\ \hline % AL8. Amortized analysis
     \ccode & \ccode & \ccode & Hatékonyság mérése empirikusan
     \\ \hline % Empirical performance measurements.
-    \cnfoc & \cnfoc & \cnfoc & kis ordó, omega és theta jelölések
+    \cnfoc & \cnfoc & \cnfoc & kis ordó, nagy omega és theta jelölések % TODO: görög betűk
     \\ \hline % Little o, Omega, and Theta notation
     \cnfoc & \cnfoc & \cnfoc & Paraméterek hangolása a futási idő vagy memória csökkentése érdekében.
     \\ \hline % Tuning parameters to reduce running time, memory consumption or other measures of performance
@@ -400,8 +402,8 @@ The rest of this document contains the classification of topics.
     \\ \hline
     \ccode & \ccode & \ccode & Két mutató (2 pointers) technika
     \\ \hline
-    \cemay & \ccode & \ccode & Bináris keresés
-    \\ \hline
+    \cemay & \ccode & \ccode & Bináris keresés szélsőérték meghatározására
+    \\ \hline % AL3a. binary search
     \cemay & \ccode & \ccode & Visszalépéses keresés (backtrack, rekurzív és nem rekurzív is)
     \\ \hline % Backtracking (recursive and non-recursive),
     \cexcl & \ccode & \ccode & Elágazás és korlátozás
@@ -420,38 +422,72 @@ The rest of this document contains the classification of topics.
     \\ \hline %Minimizing multi-variate functions using numerical approaches.
 }
 
-    \subsubsection*{AL3a. Algorithms}%{{{
+\subsubsection*{AL3a. Algoritmusok} % Algorithms
 
-    \begin{myitemize}
-    \Icodeonly Simple algorithms involving integers: radix conversion, Euclid's algorithm, primality test by $\mathcal{O}(\sqrt{n})$ trial division, Sieve of Eratosthenes, factorization (by trial division or a sieve), efficient exponentiation
-    \Icodeonly Simple operations on arbitrary precision integers (addition, subtraction, simple multiplication)\footnote{The necessity to implement these operations should be obvious from the problem statement.}
-    \Icodeonly Simple array manipulation (filling, shifting, rotating, reversal, resizing, minimum/maximum, prefix sums, histogram, bucket sort)
-    \Icodeonly Simple string algorithms (e.g., naive substring search)
-    \Icodeonly\CC{sequential} processing/search \CC{and binary search}
-    \Icodeonly \CC{Quicksort} and Quickselect to find the $k$-th smallest element.
-    \Icodeonly\CC{$\mathcal{O}(n \log n)$} worst-case \CC{sorting algorithms (heap sort, merge sort)}
-    \Icodeonly Traversals of ordered trees (pre-, in-, and post-order)
-    \Icodeonly\CC{Depth- and breadth-first traversals}
-    \Icodeonly Applications of the depth-first traversal tree, such as topological ordering and Euler paths/cycles
-    \Icodeonly Finding connected components and transitive closures.
-    \Icodeonly Shortest-path algorithms (Dijkstra, Bellman-Ford, Floyd-Warshall)
-    \Icodeonly Minimum spanning tree (Jarn\'\i k-Prim and Kruskal algorithms)
-    \Icodeonly $O(VE)$ time algorithm for computing maximum bipartite matching.
-    \Icodeonly Biconnectivity in undirected graphs (bridges, articulation points).
-    \Icodeonly Connectivity in directed graphs (strongly connected components).
-    \Icodeonly Basics of combinatorial game theory, winning and losing positions, minimax algorithm for optimal game playing
-    \end{myitemize}
+\ctable {
+    \ccode & \ccode & \ccode & Egyszerű számelméleti algoritmusok: számrendszer átváltás, Euklideszi algoritmus (LNKO-ra),
+    prímteszt $\mathcal{O}(\sqrt{n})$ osztókereséssel, Eratosztenészi szita, prímfelbontés (osztókereséssel vagy szitával)
+    \\ \hline % Simple algorithms involving integers: radix conversion, Euclid's algorithm, primality test by $\mathcal{O}(\sqrt{n})$ trial division,
+    % Sieve of Eratosthenes, factorization (by trial division or a sieve),
+    \cexcl & \cemay & \ccode & Gyors hatványozás (négyzetre emelésekkel)
+    \\ \hline % efficient exponentiation
+    \cexcl & \cemay & \ccode & Műveletek tetszőlegesen nagy egész számokkal (összeadás, kivonás, szorzás)
+    \\ \hline % Simple operations on arbitrary precision integers (addition, subtraction, simple multiplication)
+    % \footnote{The necessity to implement these operations should be obvious from the problem statement.}
+    \ccode & \ccode & \ccode & Egyszerű programozási tételek tömbökön: összegzés, megszámolás, keresés, minimum/maximum, kiválogatás
+    \\ \hline % Simple array manipulation (filling, shifting, rotating, reversal, resizing, minimum/maximum, prefix sums, histogram, bucket sort)
+    % {sequential} processing/search
+    \ccode & \ccode & \ccode & Programozási tételek összeépítése, pl. feltételes maximum
+    \\ \hline % Simple array manipulation (filling, shifting, rotating, reversal, resizing, minimum/maximum, prefix sums, histogram, bucket sort)
+    \ccode & \ccode & \ccode & Rendezett sorozatok összefésülése, metszet, unió
+    \\ \hline
+    \ccode & \ccode & \ccode & Egyszerű string algoritmusok (pl. minta keresése naiv módszerrel)
+    \\ \hline % Simple string algorithms (e.g., naive substring search)
+    \ccode & \ccode & \ccode & {$\mathcal{O}(n^2)$} rendezések (buborék, leszámláló, minimum-kiválasztásos)
+    \\ \hline
+    \cemay & \ccode & \ccode & Gyorsrendezés (quicksort), \textit{NT1-ben a sort() függvény használata elvárt, de az algoritmus ismerete nem}
+    \\ \hline % {Quicksort} and Quickselect to find the $k$-th smallest element.
+    \cexcl & \ccode & \ccode & $\mathcal{O}(n \log n)$ rendezések (kupac, összefésüléses)
+    \\ \hline % {$\mathcal{O}(n \log n)$} worst-case \CC{sorting algorithms (heap sort, merge sort)}
+    \cexcl & \cemay & \ccode & Lineáris idejű rendezések (láda/vödör rendezés, radix rendezés)
+        \footnote{A gyakorlatban a futási időt lehetetlen megkülönböztetni a beépített rendezéstől, így csak kifejezetten erről szóló feladatnál kell.}
+    \\ \hline % bucket sort
+    \cemay & \ccode & \ccode & Rekurzív fabejárás
+    \\ \hline
+    \cexcl & \cdefi & \cdefi & Rendezett fák bejárásai (pre, in- és post-order)
+    \\ \hline % Traversals of ordered trees (pre-, in-, and post-order)
+    \cexcl & \ccode & \ccode & Szélességi és mélységi gráfbejárás
+    \\ \hline % Depth- and breadth-first traversals
+    \cexcl & \ccode & \ccode & Összefüggő komponensek meghatározása
+    \\ \hline % Finding connected components and transitive closures.
+    \cexcl & \ccode & \ccode & A mélységi feszítőfa alkalmazásai, például topologikus sorrend
+    \\ \hline % Applications of the depth-first traversal tree, such as topological ordering
+    \cexcl & \cdefi & \cdefi & Irányított körmentes gráf emeletekre bontása
+    \\ \hline 
+    \cexcl & \cdefi & \cdefi & Euler-séta/körséta keresése
+    \\ \hline % and Euler paths/cycles
+    \cexcl & \cdefi & \cdefi & Legrövidebb utak súlyozott gráfokban (Dijkstra, Bellman-Ford, Floyd-Warshall)
+    \\ \hline % Shortest-path algorithms (Dijkstra, Bellman-Ford, Floyd-Warshall)
+    \cexcl & \cdefi & \cdefi & Minimális feszítőfa keresése (Prim és Kruskal algoritmus)
+    \\ \hline % Minimum spanning tree (Jarn\'\i k-Prim and Kruskal algorithms)
+    \cexcl & \cemay & \cdefi & Elvágó pontok, hídélek keresése, kétszeres (pont- ill. él-) összefüggőség
+    \\ \hline % Biconnectivity in undirected graphs (bridges, articulation points).
+    \cexcl & \cemay & \cdefi & Irányított gráfok összefüggősége, erősen összefüggő komponensek
+    \\ \hline % Connectivity in directed graphs (strongly connected components).
+    \cexcl & \cexcl & \cdefi & Páros gráfban maximális párosítás keresése magyar módszerrel ($O(VE)$ időben)
+    \\ \hline % $O(VE)$ time algorithm for computing maximum bipartite matching.
+    \ccode & \cdefi & \cdefi & Kombinatorikus játékok alapjai, nyerő és vesztő pozíciók
+    \\ \hline % Basics of combinatorial game theory, winning and losing positions,
+    \cexcl & \ccode & \ccode & Minimax algoritmus kétszemélyes játékok optimális stratégiájára
+    \\ \hline % minimax algorithm for optimal game playing
+    \cexcl & \cexcl & \cexcl & Hálózati folyamok, maximális folyam és minimális vágás keresése
+    \\ \hline % Maximum flow. Flow/cut duality theorem.
+    \cexcl & \cexcl & \cexcl & Matroidok és hozzájuk kapcsolódó optimalizálási problémák
+    \\ \hline % optimization problems that are easiest to analyze using matroid theory. Problems based on matroid intersecions (except for bipartite matching).
+    \cexcl & \cexcl & \cexcl & Lexikografikus szélességi bejárás, maximum adjacency search % TODO: mi ez magyarul, egyáltalán kell-e ?
+    \\ \hline % Lexicographical BFS, maximum adjacency search and their properties
+}
 
-    \begin{myitemize}
-    \Iexmaybe Maximum flow. Flow/cut duality theorem.
-    \end{myitemize}
-
-    \begin{myitemize}
-    \Iexcluded Optimization problems that are easiest to analyze using matroid theory. Problems based on matroid intersecions (except for bipartite matching).
-    \Iexcluded Lexicographical BFS, maximum adjacency search and their properties
-    \end{myitemize}
- 
-    %}}}
     \subsubsection*{AL3b. Data structures}%{{{
   
     \begin{myitemize}
