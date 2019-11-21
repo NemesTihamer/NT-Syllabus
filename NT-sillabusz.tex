@@ -173,103 +173,72 @@ current Syllabus maintainer.
 \bigskip
 
 \noindent
-Here are the definitions of the six possible classifications:
+A hat lehetséges besorolás:
 
 \begin{description}
 \item[\cincl\ Lehet, megkötések nélkül]~\\
     Ebben a kategóriában lévő témakörök előzetes tudásnak tekintendők. A versenyzőktől elvárt az ismeretük.
     A feladatleírásban magyarázat nélkül előfordulhatnak.
 
-    Example: \emph{Integer} in~\S\ref{subsubsec:NG}
+    Példa: \emph{Egész típus} ~\S\ref{subsubsec:PF}~PA1
 
-\item[\cdefi\ Included, to be defined]~\\
-    Contestants should know this topic,
-    but when it appears in a task description,
-    the statement should contain a sufficient definition.
-    This category is usually applied in situations where a general
-    concept that would be \cincl\ has many different ``flavors'' and a formal definition
-    is needed to distinguish among those.
+\item[\cdefi\ Lehet, de magyarázandó]~\\
+    A versenyzőknek ismerniük kell ezt a témakört, de amikor feladatleírásban szerepel, akkor definiálni kell.
+    Általában akkor használjuk ezt a besorolást, ha egy \cincl\  témát többféleképpen is lehet értelmezni.
 
-    Example: \emph{Directed graph} in~\S\ref{subsubsec:DS}~DS2
+    Példa: \emph{Feszítőfa} ~\S\ref{subsubsec:DS}~DS5
 
-\item[\ccode\ Included, not for task description]~\\
-    Topics that belong to this category should not appear in tasks 
-    descriptions. However, developing solutions and understanding 
-    model solutions may require the knowledge of these topics.
-
-    Example: \emph{Asymptotic analysis of upper complexity bounds\/}
+\item[\ccode\ Lehet, de a feladatleírásban nem]~\\
+    Olyan témakörök sorolhatók ide, amelyeknek ismeretére a versenyzőknek a feladatmegoldás során van szüksége.
+    Tehát a feladat szövegében nem szerepelhetnek.
+    
+    Példa: \emph{Aszimptotikus felső becslés a komplexitásra}
     in \S\ref{subsubsec:AL}~AL1
 
-    Note: This is the main category that should be of interest when 
-    preparing contestants for the IOI. 
+    Ez egy központi téma a verseny kapcsán, hiszen egy helyes program az algoritmus komplexitása alapján kap pontot.
+    Mégsem fordulhat elő a feladatleírásban a komplexitás fogalma, a precíz definíció ismerete nem is elvárt.
+
     It should be noted that this set of topics
     contains a wide range of difficulties, starting from simple concepts and ending 
     with topics that can appear in problems that aim to distinguish among 
     the gold medallists. It is \textbf{not} expected that all contestants
     should know everything listed in this category.
 
-\item[\cnfoc\ Outside of focus]~\\
-    Any topic that is not explicitly addressed by the Syllabus
-    should be considered to belong to this category.
+\item[\cnfoc\ Hatáskörön kívül]~\\
+    Bármilyen téma, amit nem említ a Sillabusz, ebbe a kategóriába esik.
+    A versenyzőktől nem elvárt, hogy ismerjék ezeket. A legtöbb versenyfeladat
+    nem kapcsolódik ilyen témakörökhöz. De ez nem zárja ki, hogy a versenyen
+    legyen olyan feladat, ami ilyen témakörhöz kapcsolódik. A versenybizottság
+    kitűzhet ilyen feladatot a verseny színesítése érdekében, de ebben az esetben
+    is megoldhatónak kell lennie a fenti kategóriákba eső ismeretekkel.   
 
-    Contestants are not expected to have knowledge of these topics.
-    Most competition tasks will not be related to any topics 
-    from this category.
 
-    However, this does not prevent the inclusion of 
-    a competition task that is related to a particular topic
-    from this category. The ISC may wish to include such a competition 
-    task in order to broaden the scope of the IOI.
+\item[\cexcl\ Nem lehet, de nyitott a megvitatásra]~\\
+    A Sillabusz az évek során változik, fejlődik a versennyel együtt, így lehetőség
+    adódik arra, hogy egy (valamely korcsoportban) kizárt téma később bekerüljön
+    a verseny anyagába. Általában ezek a témakörök kapcsolódnak megengedett témakörökhöz,
+    és nehéz határt szabni. Ebben az esetben a megvitatásra nyitott kategóriába kerülnek
+    ezek a témakörök, ezzel is bíztatva a szakmai közösséget a visszajelzésre a kérdést illetően.
+    Ha bekerül az idők során egy témakör, akkor a kizárt kategóriából először ebbe kell kerülnie.
     
-    If such a task is considered for the IOI,
-    the ISC will make sure that the task can reasonably be solved
-    without prior knowledge of the particular topic, and that 
-    the task can be stated
-    in terms of \cincl\ and \cdefi\ concepts in a precise, concise, 
-    and clear way.
+    Példa: \emph{Szegmensfa\/} ~\S\ref{subsubsec:AL}~Al4
 
-    Examples of such tasks being used at recent IOIs include:
-    \begin{itemize}
-    \itemsep -3pt
-    \item Languages (a.k.a. Wikipedia) from IOI 2010 in Canada
-    \item Odometer (a.k.a. robot with pebbles) from IOI 2012 in Italy
-    \item Art class from IOI 2013 in Australia.
-    \end{itemize}
+\item[\cemay\ Kizárt]~\\
+    Ebbe a kategóriákba főként nehéz algoritmikus módszerek, bonyolult matematikai fogalmak
+    tartoznak. Garantált, hogy nem lesz olyan feladat a versenyen, amelynek megoldásához
+    elengedhetetlen egy ilyen témakör ismerete. Szintén kívánatos, hogy ezeknek a témáknak
+    az ismerete ne nyújtson utat egyszerűbb, vagy több pontot érő megoldáshoz. Ugyanakkor
+    előfordulhat, hogy egy feladat témaköre kapcsolódik egy ilyen témához, de ennek ismerete
+    nem segít lényegesen a megoldásban.
 
+    Példa: \emph{Heavy-light decomposition} ~\S\ref{subsubsec:AL}~AL4
 
-\item[\cexcl\ Explicitly excluded]~\\
-    Some of the harder algorithmic topics are explicitly marked as excluded.
-    It is guaranteed that there will not be a competition
-    task that \emph{requires} the contestants to know these areas.
-
-    Furthermore, the tasks will be set with the goal that knowledge of 
-    Excluded topics should not help in obtaining simpler solutions / solutions 
-    worth more points.
-
-    This category contains topics whose inclusion will result in
-    problems that are unaccessible to a significant portion of IOI participants.
-    This includes but is not limited to hard textbook algorithms and advanced
-    areas in mathematics.
-
-    Still, note that the Syllabus must not be interpreted to restrict in 
-    any way the techniques that contestants are allowed to apply in solving 
-    the competition tasks.
-    
-    Examples: \emph{Calculus\/} in~\S\ref{subsubsec:other-mathematics}
-
-\item[\cemay\ Excluded, but open to discussion]~\\
-    As the Syllabus is a living document, there can be cases when we consider
-    bringing in some of the Excluded topics. Usually, the topics in question
-    are natural extensions of Included topics, or ones where drawing an exact
-    boundary is difficult. Should such topics appear, they will be temporarily
-    classified as ``Excluded, but open to discussion'', and by doing so we encourage 
-    all members of the IOI community to give us feedback on these topics.
 \end{description}
 
 \bigskip
 
 \noindent
-The rest of this document contains the classification of topics.
+A dokumentum további része a témaköröket és azok korcsoportonkénti besorolását tartalmazza.
 %}}}
 
 
