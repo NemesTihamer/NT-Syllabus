@@ -1,7 +1,7 @@
 # NT Sillabusz
  A Nemes Tihamér NITV Programozás kategória anyagának kivonata.
  
-# Verzió és státusz
+## Verzió és státusz
 Ez egy nem hivatalos javaslat a 2020/2021. tanévi Nemes Tihamér NITV Programozás kategória
 második és harmadik fordulójában szereplő feladatok témaköreinek leírására. Jelen verzió még szerkesztés alatt áll, nem teljes.
 
@@ -10,11 +10,11 @@ A Nemes Tihamér Sillabusz (továbbiakban NT Sillabusz) az IOI Syllabus mintáj�
 amelynek aktuális verzióját a versenybizottság hagyja jóvá és teszi közzé minden évben.
 Az évek során a dokumentum változhat, fejlődhet.
 
-# Szerzők és elérhetőségeik
+## Szerzők és elérhetőségeik
 Szívesen fogadunk bármilyen visszajelzést és javaslatot a sillabusszal kapcsolatban
 a jelenlegi szerkesztő e-mail címére küldve (laszlo.nikhazy@gmail.com).
 
-# Együttműködés
+## Együttműködés
 Azok számára, akik szeretnének hozzájárulni a dokumentum fejlesztéséhez, vagy hozzászólni,
 javaslatokat tenni a tartalmához, itt, ebben a repository-ban tehetik ezt meg.
 Minden javaslatot, hozzászólást és segítséget szívesen fogadunk.
