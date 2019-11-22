@@ -23,3 +23,6 @@ Bármilyen javaslat esetén nyissunk új issue-t, amiben aztán párbeszéd indu
 egy ezzel kapcsolatos döntés. Mielőtt új issue-t csinálnál, kérlek nézd meg a nyitott issue-k
 listáját. Konkrét változatási javaslat, illetve egy konkrét elemet érintő kérdés esetén kérjük
 a megfelelő sorra hivatkozzon az issue-ban.
+
+## Statisztika korábbi évek felatairól
+http://bit.ly/nt-feladatok 
