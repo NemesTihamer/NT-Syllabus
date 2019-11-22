@@ -608,6 +608,7 @@ A dokumentum további része a témaköröket és azok korcsoportonkénti besoro
 }
 
 \subsection{Számelmélet} % {Arithmetics and Geometry részen belül van}
+\label{subsubsec:NT}
 
 \ctable {
     \cincl & \cincl & \cincl & Osztó-többszörös viszony
@@ -628,71 +629,86 @@ A dokumentum további része a témaköröket és azok korcsoportonkénti besoro
 }
 
 
-\subsection {Discrete Structures (DS)}%{{{
+\subsection {Diszkrét matematika} % {Discrete Structures (DS)}
 \label{subsubsec:DS}
 
-    \subsubsection*{DS1. Functions, relations, and sets}
+\subsubsection*{DS1. Halmazok, relációk és függvények}
 
-        \begin{myitemize}
-        \Idefine\CC{Functions (surjections, injections, inverses, composition)}
-        \Idefine\CC{Relations (reflexivity, symmetry, transitivity, equivalence relations,
-        total/linear order relations, lexicographic order)}
-        \Idefine\CC{Sets (inclusion/exclusion, complements, Cartesian products, power sets)}
-        \end{myitemize}
+\ctable{
+    \cexcl & \ccode & \cdefi & Függvények tulajdonságai (kompozíció, kölcsönös egyértelműség, szürjekció, injekció, inverz) 
+    \\ \hline % \Idefine\CC{Functions (surjections, injections, inverses, composition)}
+    \cexcl & \cdefi & \cdefi & Relációk tulajdonságai (szimmetrikus, tranzitív, reflexív, ekvivalenciareláció)
+    \\ \hline % \Idefine\CC{Relations (reflexivity, symmetry, transitivity, equivalence relations)}
+    \cdefi & \cincl & \cincl & Rendezési reláció, lexikografikus sorrend
+    \\ \hline % total/linear order relations, lexicographic order
+    \cincl & \cincl & \cincl & Halmazok: eleme, részhalmaz, unió, metszet
+    \\ \hline % Sets (inclusion/exclusion,
+    \cexcl & \cdefi & \cdefi & Halmazok: komplementer, Descartes-szorzat, hatványhalmaz
+    \\ \hline % complements, Cartesian products, power sets)}
+    \cexcl & \cexcl & \cexcl & Végtelen halmazok számossága
+    \\ \hline % {Cardinality and countability} (of infinite sets)
 
-        %{Explicitly excluded\/}:
-        \begin{myitemize}
-        \Iexcluded{Cardinality and countability} (of infinite sets)
-        \end{myitemize}
-  
-    \subsubsection*{DS2. Basic logic}
+}
 
-        \begin{myitemize}
-        \Iincluded First-order logic
-        \Iincluded\CC{Logical connectives} (incl.\ their basic properties)
-        \Iincluded\CC{Truth tables}
-        \Iincluded\CC{Universal and existential quantification} (Note: statements should avoid definitions with nested quantifiers whenever possible.)
-        \Icodeonly\CC{Modus ponens and modus tollens}
-        \end{myitemize}
+\subsubsection*{DS2. Matematikai logika} % {DS2. Basic logic}
 
-        %{Out of focus\/}:
-        \begin{myitemize}
-        \Inofocus \CC{Normal forms}
-        \end{myitemize}
-        
-        %{Explicitly excluded\/}:
-        \begin{myitemize}
-        \Iexcluded \CC{Validity}
-        \Iexcluded \CC{Limitations of predicate logic}
-        \end{myitemize}
+\ctable {
+    \cincl & \cincl & \cincl & Logikai műveletek és tulajdonságaik (nem, és, vagy, ha-akkor)
+    \\ \hline  % {Logical connectives} (incl.\ their basic properties)
+    \cincl & \cincl & \cincl & Igazságtáblák
+    \\ \hline  % {Truth tables}
+    \ccode & \ccode & \cdefi & Minden és létezik (a kvantorral való jelölés elkerülendő)
+    \\ \hline  % {Universal and existential quantification}
+    \cexcl & \ccode & \ccode & Elsőrendű logika, modus ponens
+    \\ \hline  % First-order logic
+    \cexcl & \cexcl & \cemay & Normál formák
+    \\ \hline  % \Inofocus \CC{Normal forms}
+    \cexcl & \cexcl & \cexcl & A predikátumlogika limitációi
+    \\ \hline % Limitations of predicate logic
+}
 
-    \subsubsection*{DS3. Proof techniques}
+\subsubsection*{DS3. Bizonyítási módszerek} % DS3. Proof techniques
 
-        \begin{myitemize}
-        \Idefine\CC{Notions of implication, converse, inverse, contrapositive, negation, and contradiction}
-        \Icodeonly\CC{Direct proofs, proofs by: counterexample, contraposition, contradiction}
-        \Icodeonly\CC{Mathematical induction}
-        \Icodeonly\CC{Strong induction} (also known as complete induction)
-        \Iincluded\CC{Recursive mathematical definitions} (incl.\ mutually recursive definitions)
-        \end{myitemize}
+\ctable{
+    \cincl & \cincl & \cincl & Indoklás ellenpéldával
+    \\ \hline  % {Direct proofs, proofs by: counterexample}
+    \ccode & \ccode & \ccode & Indirekt bizonyítás
+    \\ \hline  %
+    \cexcl & \cemay & \cdefi & Implikáció fogalma, ekvivalens formája, tagadása
+    \\ \hline  % {Notions of implication, converse, inverse, contrapositive, negation, and contradiction}
+    \cexcl & \ccode & \ccode & Matematikai indukció, teljes indukció
+    \\ \hline  %
+    \ccode & \ccode & \cdefi & Rekurzív összefüggések
+    \\ \hline  % {Recursive mathematical definitions} (incl.\ mutually recursive definitions)    
+}
 
-    \subsubsection*{DS4. Basics of counting}
+\subsubsection*{DS4. Kombinatorika: leszámlálások} % DS4. Basics of counting
 
-        \begin{myitemize}
-        \Iincluded\CC{Counting arguments (sum and product rule, arithmetic and geometric progressions, Fibonacci numbers)}
-        \Idefine\CC{Permutations and combinations (basic definitions)}
-        \Idefine Factorial function, binomial coefficients
-        \Icodeonly\CC{Inclusion-exclusion principle}
-        \Icodeonly\CC{Pigeonhole principle}
-        \Icodeonly\CC{Pascal's identity}, \CC{Binomial theorem}
-        \end{myitemize}
+\ctable{
+    \ccode & \ccode & \ccode & Szorzási szabály (független választások)
+    és összeadási szabály (egymást kizáró választások) leszámlálásokban
+    \\ \hline  % {Counting arguments (sum and product rule,
+    \ccode & \ccode & \ccode & Számtani és mértani sorozatos növekedés
+    \\ \hline  % arithmetic and geometric progressions,
+    \ccode & \cdefi & \cdefi & Fibonacci-típusú és egyéb rekurzív sorozatok
+    \\ \hline  % Fibonacci numbers
+    \cdefi & \cincl & \cincl & Permutációk, kombinációk és variációk
+    \\ \hline  % {Permutations and combinations (basic definitions)}
+    \ccode & \ccode & \ccode & Logikai szita (sok halmazra csak OKTV-ben)
+    \\ \hline  % {Inclusion-exclusion principle} 
+    \ccode & \ccode & \ccode & Skatulyaelv
+    \\ \hline  % {Pigeonhole principle}
+    \cemay & \ccode & \ccode & Pascal-háromszög, binomiális tétel
+    \\ \hline  % {Pascal's identity}, \CC{Binomial theorem}
+    \ccode & \ccode & \ccode & Módszerek lexikografikusan következő/előző
+    és N-edik elem előállítására
+    \\ \hline  %
+    \cexcl & \cexcl & \cexcl & Rekurzív formulák explicit alakra hozása
+    \\ \hline  % \Iexcluded  Solving of recurrence relations
+    \cexcl & \cexcl & \cexcl & Burnside-lemma
+    \\ \hline  % \Iexcluded Burnside lemma
+}
 
-        %{Explicitly excluded\/}:
-        \begin{myitemize}
-        \Iexcluded Solving of recurrence relations
-        \Iexcluded Burnside lemma
-        \end{myitemize}
-  
     \subsubsection*{DS5. Graphs and trees}
 
         \begin{myitemize}
