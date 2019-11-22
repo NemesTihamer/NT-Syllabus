@@ -755,33 +755,71 @@ A dokumentum további része a témaköröket és azok korcsoportonkénti besoro
     \\ \hline  % 
 }
 
-    \subsubsection*{DS6. Discrete probability}
-  
-        \begin{quote}
-        Applications where everything is finite (and thus arguments about probability can be easily
-        turned into combinatorial arguments) are \cnfoc, everything more complicated
-        is \cexcl.
-        \end{quote}
-
-%}}}
-\subsection {Other Areas in Mathematics}%{{{
+\subsection {A matematika egyéb területei} % {Other Areas in Mathematics}
 \label{subsubsec:other-mathematics}
 
-    %{Explicitly excluded\/}:
-    \begin{myitemize}
-    \Iexcluded Geometry in three or more dimensions.
-    \Iexcluded  Linear algebra, including (but not limited to):
-        \begin{myitemize}
-        \item Matrix multiplication, exponentiation, \\
-              inversion, and Gaussian elimination
-        \item Fast Fourier transform
-        \end{myitemize}
-    \Iexcluded Calculus
-    \Iexcluded Theory of combinatorial games, e.g., NIM game, Sprague-Grundy theory
-    \Iexcluded Statistics
-    \end{myitemize}
+\ctable {
+    \cnfoc & \cnfoc & \cnfoc & Valószínűségszámítás (a diszkrét valószínűség könnyen
+    átalakítható kombinatorika feladatokra)
+    \\ \hline  % DS6. Discrete probability
+    \cexcl & \cexcl & \cexcl & Térgeometria, és magasabb dimenziós geometria
+    \\ \hline  % Geometry in three or more dimensions.
+    \cexcl & \cexcl & \cexcl & Lineáris algebra, például vektorterek, mátrix műveletek,
+    Gauss-elimináció, FFT
+    \\ \hline  % Linear algebra, including (but not limited to): Matrix multiplication, exponentiation, 
+    % inversion, and Gaussian elimination, Fast Fourier transform
+    \cexcl & \cexcl & \cexcl & Analízis
+    \\ \hline  % Calculus
+    \cexcl & \cexcl & \cexcl & Haladó kombinatorikus játékelmélet, például NIM és Sprague-Grundy tétel
+    \\ \hline  % Theory of combinatorial games, e.g., NIM game, Sprague-Grundy theory
+    \cexcl & \cexcl & \cexcl & Statisztika
+    \\ \hline  % Statistics
 
-%}}}
+}
 
+\section {Szoftvefejlesztés} % {Software Engineering (SE)}
+\label{subsec:software-engineering}
+
+\begin{quote}
+    Az NT Sillabuszban kisebb súllyal jelenik meg ez a téma, mint az IOI Syllabusban, mivel
+    elsősorban algoritmizálásról és ehhez kapcsolódó fogalmakról szól ez a dokumentum. A versenyen
+    sokkal kevésbé fontos a szoftvertervezés, mint egy összetett alkalmazás fejlesztésében.
+\end{quote}
+
+\ctable{
+    \ccode & \ccode & \ccode & Fekete-doboz tesztelés, be- és kimenet alapján
+    \\ \hline  % {Black-box and white-box testing techniques}
+    \ccode & \ccode & \ccode & Függvénykönyvtárak használata (például C++ STL)
+    \\ \hline  % 
+    \cexcl & \cexcl & \cemay & Egyszerű API megvalósítása (például interaktív feladatok)
+    \\ \hline  % {API (Application Programming Interface) programming}
+    \ccode & \ccode & \ccode & Valamilyen programozási környezet (IDE), fordítóprogam (compiler) ismerete
+    \\ \hline  % {Programming environments}, incl.\ IDE (Integrated Development Environment)
+    \cexcl & \cexcl & \cexcl & Objektum-orientált programozás és tervezési minták
+    \\ \hline  % {Object-Oriented analysis and design}, {Design patterns}
+    \cexcl & \cexcl & \cexcl & Szoftver-architektúrák
+    \\ \hline  % {Software architecture}
+    
+}
+
+\section {Digitális írástudás} % {Computer Literacy}
+\label{subsec:computer-literacy}
+
+\begin{quote}
+    The text of this section is \ccode .
+    
+    \medskip
+    
+    Contestants should know and understand the basic structure and operation of a computer
+    (CPU, memory, I/O).
+    They are expected to be able to use a standard computer with graphical user interface,
+    its operating system with supporting applications, and the provided program development tools
+    for the purpose of solving the competition tasks. In particular,some skill in file management
+    is helpful (creating folders, copying and moving files).
+    Typically, some services are available through a standard web browser.    
+    It is often the case that a number of equivalent tools are made available.
+    The contestants are not expected to know all the features of all these tools.
+    They can make their own choice based on what they find most appropriate.
+\end{quote}    
 
 \end{document}
