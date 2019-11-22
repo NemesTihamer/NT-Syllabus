@@ -436,6 +436,8 @@ A dokumentum további része a témaköröket és azok korcsoportonkénti besoro
     \\ \hline % Basics of combinatorial game theory, winning and losing positions,
     \cexcl & \ccode & \ccode & Minimax algoritmus kétszemélyes játékok optimális stratégiájára
     \\ \hline % minimax algorithm for optimal game playing
+    \cexcl & \cexcl & \cexcl & Alfa-béta vágás
+    \\ \hline % Alpha-beta pruning
     \cexcl & \cexcl & \cexcl & Hálózati folyamok, maximális folyam és minimális vágás keresése
     \\ \hline % Maximum flow. Flow/cut duality theorem.
     \cexcl & \cexcl & \cexcl & Matroidok és hozzájuk kapcsolódó optimalizálási problémák
@@ -546,137 +548,86 @@ A dokumentum további része a témaköröket és azok korcsoportonkénti besoro
 
 
 
-    \subsubsection*{AL11. Parallel algorithms}%{{{
+\subsubsection*{AL6. Egyéb algoritmuselméleti területek}%{{{
 
-    \begin{quote}
-    This entire section is \cnfoc.
-    \end{quote}
+\ctable {
+    \cexcl & \cexcl & \cemay & Online algoritmusok
+    \\ \hline % AL8. Advanced algorithmic analysis -> Online algorithms
+    \cnfoc & \cnfoc & \cnfoc & Randomizált algoritmusok
+    \\ \hline % AL7. AL8. Advanced algorithmic analysis -> Randomized algorithms
+    \cexcl & \cexcl & \cemay & Automaták és nyelvtanok, reguláris kifejezések
+    \\ \hline % AL7. Automata and grammars
+    \cnfoc & \cnfoc & \cnfoc & Megállási probléma, nem kiszámítható függvények
+    \\ \hline %AL5. Basic computability {Uncomputable functions}; {The halting problem};
+    \cnfoc & \cnfoc & \cnfoc & P és NP komplexitási osztályok
+    \\ \hline % AL6. The complexity classes P and NP
+    \cnfoc & \cnfoc & \cnfoc & Elosztott algoritmusok
+    \\ \hline % AL4. Distributed algorithms
+    \cnfoc & \cnfoc & \cnfoc & Kriptográfiai algoritmusok, titkosítás
+    \\ \hline % AL9. Cryptographic algorithms
+}
 
-    %}}}
-
-    \subsubsection*{AL4. Distributed algorithms}%{{{
-
-    \begin{quote}
-    This entire section is \cnfoc.
-    \end{quote}
-
-    %}}}
-    \subsubsection*{AL5. Basic computability}%{{{
-
-    \begin{quote}
-    All topics related to computability are \cexcl.
-    This includes the following:
-    \CC{Tractable and intractable problems};
-    \CC{Uncomputable functions};
-    \CC{The halting problem};
-    \CC{Implications of uncomputability}.
-    
-    However, see AL7 for basic computational models.
-    \end{quote}
-
-    %}}}
-    \subsubsection*{AL6. The complexity classes P and NP}%{{{
-
-    \begin{quote}
-    Topics related to non-determinism, proofs of NP-hardness (reductions),
-    and everything related is \cexcl.
-
-    Note that this section only covers the results usually contained in
-    undergraduate and graduate courses on formal languages and 
-    computational complexity. The classification of these topics
-    as \cexcl\ does not mean that an NP-hard 
-    problem cannot appear at an IOI.
-    \end{quote}
-
-    %}}}
-    \subsubsection*{AL7. Automata and grammars}%{{{
-
-    \begin{myitemize}
-    \Idefine Understanding a simple grammar in Backus-Naur form
-    \end{myitemize}
-
-    \begin{myitemize}
-    \Inofocus Formal definition and properties of finite-state machines,
-    \Inofocus Context-free grammars and related rewriting systems,
-    \Inofocus Regular expressions
-    \end{myitemize}
-  
-    \begin{myitemize}
-    \Iexcluded Properties other than the fact that automata are graphs and that grammars have parse trees.
-    \end{myitemize}
-  
-    %}}}
-    \subsubsection*{AL8. Advanced algorithmic analysis}%{{{
-
-    \begin{myitemize}
-    \Icodeonly Amortized analysis.
-    \end{myitemize}
-
-    \begin{myitemize}
-    \Inofocus Online algorithms
-    \Inofocus Randomized algorithms
-    \end{myitemize}
-
-    \begin{myitemize}
-    \Iexcluded Alpha-beta pruning
-    \end{myitemize}
-    
-    %}}}
-    \subsubsection*{AL9. Cryptographic algorithms}%{{{
-
-    \begin{quote}
-    This entire section is \cnfoc.
-    \end{quote}
-
-    %}}}
-    \subsubsection*{AL11. Parallel algorithms}%{{{
-
-    \begin{quote}
-    This entire section is \cnfoc.
-    \end{quote}
-
-    %}}}
-
-
-\section {Matemaika} % Mathematics
+\section {Matematika} % Mathematics
 \label{subsec:mathematics}
 
 \subsection{Aritmetika és geometria} % {Arithmetics and Geometry}
 \label{subsubsec:NG}
 
 \ctable {
-
+    \cincl & \cincl & \cincl & Egész számok, alapműveletek (hatványozás is), összehasonlítás
+    \\ \hline %  Integers, operations (incl.\ exponentiation), comparison
+    \cincl & \cincl & \cincl & Egész számok alapvető tulajdonságai: előjel, paritás, oszthatóság
+    \\ \hline %  Basic properties of integers (sign, parity, divisibility)
+    \cincl & \cincl & \cincl & Törtek, százalékok
+    \\ \hline %  Fractions, percentages
+    \cincl & \cincl & \cincl & Számrendszerek, mértékegység átváltások (naptár ismerete)
+    \\ \hline %
+    \cdefi & \cdefi & \cdefi & Számtani és mértani sorozatok 
+    \\ \hline %
+    \cincl & \cincl & \cincl & Alapvető geometriai fogalmak: egyenes, szakasz, szög, sokszög,
+    háromszög, téglalap, négyzet, kör
+    \\ \hline %  Line, line segment, angle, triangle, rectangle, square, circle
+    \cexcl & \cemay & \cincl & Pont, vektor, síkbeli koordináták
+    \\ \hline %  Point, vector, coordinates in the plane
+    \cexcl & \cemay & \cincl & Sokszögekkel kapcsolatos fogalmak: csúcs, oldal, konvex/konkáv, kerület, terület, tartalmazás
+    \\ \hline %  Polygon (vertex, side/edge, simple, convex, inside, area)
+    \cexcl & \cdefi & \cdefi & Euklideszi távolság 
+    \\ \hline % Prime numbers
+    \cexcl & \ccode & \ccode & Pitagorasz-tétel 
+    \\ \hline % Pythagorean theorem
+    \cexcl & \cexcl & \cexcl & Geometria 3D (vagy több dimenziós) térben 
+    \\ \hline % geometry in 3D or higher dimensional spaces
+    \cexcl & \cexcl & \cexcl & Lebegőpontos számítások pontosságának elemzése és javítása 
+    \\ \hline % analyzing and increasing precision of floating-point \\ computations
+    \cexcl & \cexcl & \cexcl & Komplex számok
+    \\ \hline % complex numbers,
+    \cexcl & \cexcl & \cexcl & Kúpszeletek (parabola, hiperbola, ellipszis) 
+    \\ \hline % general conics (parabolas, hyperbolas, ellipses)
+    \cexcl & \cexcl & \cemay & Trigonometriai függvények 
+    \\ \hline % trigonometric functions
 }
 
-    \begin{myitemize}
-    \Iincluded Integers, operations (incl.\ exponentiation), comparison
-    \Iincluded Basic properties of integers (sign, parity, divisibility)
-    \Iincluded Basic modular arithmetic: addition, subtraction, \\ multiplication
-    \Icodeonly Prime numbers
-    \Iincluded Fractions, percentages
-    \Iincluded Line, line segment, angle, triangle, rectangle, square, circle
-    \Iincluded Point, vector, coordinates in the plane
-    \Iincluded Polygon (vertex, side/edge, simple, convex, inside, area)
-    \Idefine Euclidean distances
-    \Icodeonly Pythagorean theorem
-    \end{myitemize}
+\subsection{Számelmélet} % {Arithmetics and Geometry részen belül van}
 
-    %{Excluded, but open to discussion}
-    \begin{myitemize}
-    \Iexmaybe Additional topics from number theory.
-    \end{myitemize}
+\ctable {
+    \cincl & \cincl & \cincl & Osztó-többszörös viszony
+    \\ \hline %
+    \cincl & \cincl & \cincl & Műveletek maradékokkal 
+    \\ \hline %  Basic modular arithmetic: addition, subtraction, \\ multiplication
+    \cdefi & \cincl & \cincl & Prímszámok 
+    \\ \hline % Prime numbers
+    \cemay & \cdefi & \cdefi & Prímtényezős felbontás 
+    \\ \hline %
+    \cincl & \cincl & \cincl & Legnagyobb közös osztó, legkisebb közös többszörös 
+    \\ \hline %
+    \cexcl & \cexcl & \cemay & Modulo inverz 
+    \\ \hline % \Iexcluded modular division and inverse elements
+    \cexcl & \cemay & \cemay & További számelméleti témák 
+    \\ \hline % Additional topics from number theory.
     
-    %{Explicitly excluded\/}:
-    \begin{myitemize}
-    \Iexcluded geometry in 3D or higher dimensional spaces
-    \Iexcluded analyzing and increasing precision of floating-point \\ computations
-    \Iexcluded modular division and inverse elements
-    \Iexcluded complex numbers,
-    \Iexcluded general conics (parabolas, hyperbolas, ellipses)
-    \Iexcluded trigonometric functions
-    \end{myitemize}
+}
 
-%}}}
+
 \subsection {Discrete Structures (DS)}%{{{
 \label{subsubsec:DS}
 
