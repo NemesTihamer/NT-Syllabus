@@ -629,10 +629,10 @@ A dokumentum további része a témaköröket és azok korcsoportonkénti besoro
 }
 
 
-\subsection {Diszkrét matematika} % {Discrete Structures (DS)}
+\subsection {Véges matematika} % {Discrete Structures (DS)}
 \label{subsubsec:DS}
 
-\subsubsection*{DS1. Halmazok, relációk és függvények}
+\subsubsection*{VM1. Halmazok, relációk és függvények} % DS1. Functions, relations, and sets
 
 \ctable{
     \cexcl & \ccode & \cdefi & Függvények tulajdonságai (kompozíció, kölcsönös egyértelműség, szürjekció, injekció, inverz) 
@@ -650,7 +650,7 @@ A dokumentum további része a témaköröket és azok korcsoportonkénti besoro
 
 }
 
-\subsubsection*{DS2. Matematikai logika} % {DS2. Basic logic}
+\subsubsection*{VM2. Matematikai logika} % {DS2. Basic logic}
 
 \ctable {
     \cincl & \cincl & \cincl & Logikai műveletek és tulajdonságaik (nem, és, vagy, ha-akkor)
@@ -667,7 +667,7 @@ A dokumentum további része a témaköröket és azok korcsoportonkénti besoro
     \\ \hline % Limitations of predicate logic
 }
 
-\subsubsection*{DS3. Bizonyítási módszerek} % DS3. Proof techniques
+\subsubsection*{VM3. Bizonyítási módszerek} % DS3. Proof techniques
 
 \ctable{
     \cincl & \cincl & \cincl & Indoklás ellenpéldával
@@ -682,7 +682,7 @@ A dokumentum további része a témaköröket és azok korcsoportonkénti besoro
     \\ \hline  % {Recursive mathematical definitions} (incl.\ mutually recursive definitions)    
 }
 
-\subsubsection*{DS4. Kombinatorika: leszámlálások} % DS4. Basics of counting
+\subsubsection*{VM4. Kombinatorika: leszámlálások} % DS4. Basics of counting
 
 \ctable{
     \ccode & \ccode & \ccode & Szorzási szabály (független választások)
@@ -709,28 +709,51 @@ A dokumentum további része a témaköröket és azok korcsoportonkénti besoro
     \\ \hline  % \Iexcluded Burnside lemma
 }
 
-    \subsubsection*{DS5. Graphs and trees}
 
-        \begin{myitemize}
-        \Idefine\CC{Trees} and their basic properties, rooted trees
-        \Idefine\CC{Undirected graphs} (degree, path, cycle, connectedness, Euler/Hamil\-ton path/cycle, handshaking lemma)
-        \Idefine\CC{Directed graphs} (in-degree, out-degree, directed path/cycle, Euler/Hamilton path/cycle)
-        \Idefine\CC{Spanning trees}
-        \Idefine\CC{Traversal strategies}
-        \Idefine `Decorated' graphs with edge/node labels, weights, colors
-        \Idefine Multigraphs, graphs with self-loops
-        \Idefine Bipartite graphs
-        \Icodeonly Planar graphs
-        \end{myitemize}
 
-        %{Explicitly Excluded}
-        \begin{myitemize}
-        \Iexcluded Hypergraphs
-        \Iexcluded Specific graph classes such as perfect graphs
-        \Iexcluded Structural parameters such as treewidth and expansion
-        \Iexcluded Planarity testing
-        \Iexcluded Finding separators for planar graphs
-        \end{myitemize}
+\subsubsection*{VM5. Gráfelmélet} % {DS5. Graphs and trees}
+
+    \begin{quote}
+        Az NT1 korcsoportban implicit szerepelhetnek a gráfok egy-egy feladatban, de nem
+        szükséges hozzá a fogalmak ismerete, illetve alapelv, hogy ez ne okozzon lényeges előnyt.
+    \end{quote}
+
+\ctable{
+    \ccode & \cdefi & \cincl & Fa gráfok és tulajdonságaik, gyökeres fa
+    \\ \hline  % {Trees} and their basic properties, rooted trees
+    \ccode & \ccode & \cdefi & Irányítatlan gráf és hozzá kapcsolódó fogalmak:
+    út, kör, fokszám, összefüggőség, komponens
+    \\ \hline  % {Undirected graphs} (degree, path, cycle, connectedness)
+    \cexcl & \ccode & \ccode & Euler- és Hamilton-út/kör irányítatlan és irányított gráfban is
+    \\ \hline  % Euler/Hamil\-ton path/cycle, handshaking lemma -> TODO: ez mi??
+    \ccode & \ccode & \ccode & Irányított gráf és hozzá kapcsolódó fogalmak:
+    irányított út és kör, be- és kifok
+    \\ \hline  % {Directed graphs} (in-degree, out-degree, directed path/cycle, Euler/Hamilton path/cycle)
+    \cexcl & \cdefi & \cdefi & Súlyozott, illetve színezett gráfok
+    \\ \hline  % `Decorated' graphs with edge/node labels, weights, colors
+    \ccode & \cdefi & \cdefi & Párhuzamos- és hurokélek
+    \\ \hline  % 
+    \cexcl & \cdefi & \cdefi & Feszítőfa, minimális feszítőfa 
+    \\ \hline  %  {Spanning trees}
+    \cexcl & \cdefi & \cdefi & Gráfbejárási stratégiák
+    \\ \hline  % {Traversal strategies}
+    \cexcl & \cemay & \ccode & Többszörös összefüggőség, elvágó pontok, hídélek
+    \\ \hline  % {Traversal strategies}
+    \cexcl & \cdefi & \cdefi & Páros gráf
+    \\ \hline  % {Bipartite graphs}
+    \cexcl & \cemay & \ccode & Erősen összefüggőség (irányított gráf)
+    \\ \hline  % {Bipartite graphs}
+    \cexcl & \ccode & \ccode & Síkbarajzolható gráf (lehet olyan feladat, amiben ez a feltétel teljesül a gráfra)
+    \\ \hline  % Planar graphs
+    \cexcl & \cexcl & \cexcl & Síkbarajzolhatóság eldöntése, Kuratowski-tétel
+    \\ \hline  % Planarity testing
+    \cexcl & \cexcl & \cexcl & Hipergráfok
+    \\ \hline  % Hypergraphs
+    \cexcl & \cexcl & \cexcl & Speciális gráf osztályok, mint például perfekt gráfok
+    \\ \hline  % Specific graph classes such as perfect graphs
+    \cexcl & \cexcl & \cemay & Hálózati folyamok
+    \\ \hline  % 
+}
 
     \subsubsection*{DS6. Discrete probability}
   
