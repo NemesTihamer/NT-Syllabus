@@ -1,5 +1,5 @@
-# NT-Syllabus
- A Nemes Tihamér NITV Programozás kategória anyagának kivonata
+# NT Sillabusz
+ A Nemes Tihamér NITV Programozás kategória anyagának kivonata.
  
 # Verzió és státusz
 Ez egy nem hivatalos javaslat a 2020/2021. tanévi Nemes Tihamér NITV Programozás kategória
