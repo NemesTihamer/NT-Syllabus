@@ -498,6 +498,62 @@ A dokumentum további része a témaköröket és azok korcsoportonkénti besoro
     \\ \hline % Two-dimensional tree-like data structures (such as a 2D statically balanced binary tree or a treap of treaps) used for 2D queries.
 }
 
+
+\subsection*{AL5. Geometriai algoritmusok } % AL10. Geometric algorithms
+
+\begin{quote}
+    A versenybizottság álláspontja, hogy olyan problémák szerepeljenek a versenyen, amelyek
+    egész számokkal való számításokkal megoldhatók. Lebegőpontos számításokat igénylő feladatok
+    bevonása a versenyre meggondolandó a jövőben, ha szakmailag indokolt.
+    % In general, the ISC has a strong preference towards problems that can be solved using integer
+    % arithmetics to avoid precision issues. This may include representing some computed values as 
+    % exact fractions, but extensive use of such fractions in calculations is discouraged.
+    % Additionally, if a problem uses two-dimensional objects, the ISC prefers problems in which such objects are rectilinear.
+\end{quote}
+
+\ctable {
+    \cexcl & \cemay & \cincl & Pontok, szakaszok, egyenesek és vektorok reprezentálása
+    \\ \hline % Representing points, vectors, lines, line segments. 
+    \cexcl & \cemay & \cincl & Forgásirány meghatározása, párhuzamos és merőleges vektorok, egy egyenesen lévő pontok
+    \\ \hline % Checking for collinear points, parallel/orthogonal vectors and clockwise turns (for example,
+    % by using dot products and cross products).
+    \cexcl & \cemay & \cincl & Pontok távolságának, vektorok hosszának összehasonlítása (távolságnégyzet, gyökvonás nélkül)
+    \\ \hline % 
+    \cexcl & \cemay & \cincl & Szakaszok metszéspontja
+    \\ \hline % Intersection of two lines.
+    \cexcl & \cemay & \cincl & Egy konvex/konkáv sokszögön belül vagy kívül van-e egy pont
+    \\ \hline % Checking whether a (general/convex) polygon contains a point. 
+    \cexcl & \cexcl & \cemay & Sokszög területe a csúcsok koordinátái alapján
+    \\ \hline % Computing the area of a polygon from the coordinates of its vertices.
+    % \footnote{The recommended way of doing so is to use cross products or an equivalent formula. TODO url} 
+    \cexcl & \cexcl & \ccode & Koordináta tömörítés 
+    \\ \hline % Coordinate compression.
+    \cexcl & \cexcl & \ccode & Sarokponthoz képesti polárszög szerinti rendezés
+    \\ \hline % 
+    \cexcl & \cexcl & \ccode & Söprés, söprő egyenes módszer
+    \\ \hline % Sweeping line method
+    \cexcl & \cexcl & \cdefi & Konvex burok meghatározása $\mathcal{O}(n\log{n})$ algoritmussal
+    \\ \hline % $\mathcal{O}(n\log{n})$ time algorithms for convex hull
+    \cexcl & \cexcl & \cexcl & Kör metszéspontja egyenessel illetve körrel
+    \\ \hline % Computing coordinates of circle intersections against lines and circles.
+    \cexcl & \cexcl & \cexcl & Síkbeli alakzat súlypontjának kiszámítása
+    \\ \hline % Center of mass of a 2D object.
+    \cexcl & \cexcl & \cexcl & Geometriai transzformációk lineáris algebrai reprezentációja
+    \\ \hline % Computing and representing the composition of geometric transformations if the knowledge of linear algebra gives an advantage. 
+    \cexcl & \cexcl & \cexcl & Lineáris programozás és geometriai interpretációja
+    \\ \hline % Linear programming in 3 or more dimensions and its geometric interpretations. 
+}
+
+
+
+    \subsubsection*{AL11. Parallel algorithms}%{{{
+
+    \begin{quote}
+    This entire section is \cnfoc.
+    \end{quote}
+
+    %}}}
+
     \subsubsection*{AL4. Distributed algorithms}%{{{
 
     \begin{quote}
@@ -571,37 +627,6 @@ A dokumentum további része a témaköröket és azok korcsoportonkénti besoro
     \begin{quote}
     This entire section is \cnfoc.
     \end{quote}
-
-    %}}}
-    \subsubsection*{AL10. Geometric algorithms}%{{{
-
-    \begin{quote}
-    In general, the ISC has a strong preference towards problems that can be solved using integer
-    arithmetics to avoid precision issues. This may include representing some computed values as 
-    exact fractions, but extensive use of such fractions in calculations is discouraged.
-
-    Additionally, if a problem uses two-dimensional objects, the ISC prefers problems in which such objects are rectilinear.
-    \end{quote}
-
-    \begin{myitemize}
-    \Icodeonly Representing points, vectors, lines, line segments.
-    \Icodeonly Checking for collinear points, parallel/orthogonal vectors and clockwise turns (for example, by using dot products and cross products).
-    \Icodeonly Intersection of two lines.
-    \Icodeonly Computing the area of a polygon from the coordinates of its vertices.\footnote{The recommended way of doing so is to use cross products or an equivalent formula. TODO url}
-    \Icodeonly Checking whether a (general/convex) polygon contains a point.
-    \Icodeonly Coordinate compression.
-    \Icodeonly $\mathcal{O}(n\log{n})$ time algorithms for convex hull
-    \Icodeonly Sweeping line method
-    \end{myitemize}
-  
-    \begin{myitemize}
-    \Iexcluded Point-line duality
-    \Iexcluded Halfspace intersection, Voronoi diagrams, Delaunay triangulations.
-    \Iexcluded Computing coordinates of circle intersections against lines and circles.
-    \Iexcluded Linear programming in 3 or more dimensions and its geometric interpretations.
-    \Iexcluded Center of mass of a 2D object.
-    \Iexcluded Computing and representing the composition of geometric transformations if the knowledge of linear algebra gives an advantage.
-    \end{myitemize}
 
     %}}}
     \subsubsection*{AL11. Parallel algorithms}%{{{
